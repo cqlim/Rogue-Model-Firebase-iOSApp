@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="mz5-p9-di2">
+    <device id="retina6_1" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Calculator-->
+        <scene sceneID="BOW-6g-7kx">
+            <objects>
+                <viewController id="GGe-qY-t2o" userLabel="Calculator" customClass="CalculatorViewController" customModule="GoingRogueDesign" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="whU-NY-gPt">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="f1I-Ar-cuA"/>
+                    </view>
+                    <navigationItem key="navigationItem" title="Welcome To Calculator Page" id="Cwk-6i-KEl"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="95V-hm-6I9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1168" y="181"/>
+        </scene>
+        <!--Calculator-->
+        <scene sceneID="eUn-4u-kZy">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="mz5-p9-di2" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calculator" image="Calculator Figure" id="Rbc-3S-xLh"/>
+                    <toolbarItems/>
+                    <simulatedTabBarMetrics key="simulatedBottomBarMetrics"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="NaR-tL-wYt">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="barTintColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="GGe-qY-t2o" kind="relationship" relationship="rootViewController" id="2vg-7j-Rci"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="wnl-4c-oPy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="135" y="181"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Calculator Figure" width="30" height="30"/>
+    </resources>
+</document>

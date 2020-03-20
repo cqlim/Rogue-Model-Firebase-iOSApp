@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>804059970146-6d4skp3m64hli70dvidsdsbqquseuv3p.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.804059970146-6d4skp3m64hli70dvidsdsbqquseuv3p</string>
+	<key>API_KEY</key>
+	<string>AIzaSyCrq8de4Y_EXmhpC3Y-M-bFg0ejcwhvfxY</string>
+	<key>GCM_SENDER_ID</key>
+	<string>804059970146</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.RogueModel.RogueModel</string>
+	<key>PROJECT_ID</key>
+	<string>rogue-model</string>
+	<key>STORAGE_BUCKET</key>
+	<string>rogue-model.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:804059970146:ios:b35838fbc7212b8e552f3b</string>
+	<key>DATABASE_URL</key>
+	<string>https://rogue-model.firebaseio.com</string>
+</dict>
+</plist>

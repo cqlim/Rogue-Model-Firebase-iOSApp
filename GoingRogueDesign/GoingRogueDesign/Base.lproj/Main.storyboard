@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="f5y-AM-hzX">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--Home-->
+        <scene sceneID="ExE-2B-Ai8">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Home" id="bKn-8M-EhE" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" image="Home Figure" id="XAk-hG-Al7"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="N1Z-bZ-Nnq" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="520" y="-285"/>
+        </scene>
+        <!--Calculator-->
+        <scene sceneID="sCl-qa-D8E">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Calculator" id="3Ya-Am-09f" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Calculator" image="Calculator Figure" id="sbU-Fn-wG1"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XM1-ZZ-Rog" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="799" y="-285"/>
+        </scene>
+        <!--Projects-->
+        <scene sceneID="ufB-Ya-YOk">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Projects" id="Qve-rh-aoi" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Projects" image="Projects Figure" id="Kty-Ho-zZz"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="HFV-Vj-Ner" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1217" y="-285"/>
+        </scene>
+        <!--Account-->
+        <scene sceneID="vHC-1E-7S7">
+            <objects>
+                <viewControllerPlaceholder storyboardName="Account" id="Qfg-qg-Nav" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Account" image="Account Figure" id="a88-g6-Uca"/>
+                </viewControllerPlaceholder>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="jH5-gU-sFC" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1558" y="-285"/>
+        </scene>
+        <!--Home Bar Controller-->
+        <scene sceneID="7bW-r1-3QP">
+            <objects>
+                <tabBarController storyboardIdentifier="HomeVC" title="Home Bar Controller" id="f5y-AM-hzX" sceneMemberID="viewController">
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="S1A-LA-57H">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="49"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="selectedImageTintColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="bKn-8M-EhE" kind="relationship" relationship="viewControllers" id="Fci-Ya-BYZ"/>
+                        <segue destination="3Ya-Am-09f" kind="relationship" relationship="viewControllers" id="FDa-1y-qnE"/>
+                        <segue destination="Qve-rh-aoi" kind="relationship" relationship="viewControllers" id="E5r-tf-GMo"/>
+                        <segue destination="Qfg-qg-Nav" kind="relationship" relationship="viewControllers" id="n2W-uC-Q5h"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="YbO-Vs-uoX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1002" y="-715"/>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="Account Figure" width="30" height="30"/>
+        <image name="Calculator Figure" width="30" height="30"/>
+        <image name="Home Figure" width="33.333332061767578" height="33.333332061767578"/>
+        <image name="Projects Figure" width="30" height="30"/>
+    </resources>
+    <color key="tintColor" systemColor="systemBlueColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+</document>
