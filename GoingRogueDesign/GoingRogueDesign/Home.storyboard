@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UkD-Rr-CUu">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15705" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="UkD-Rr-CUu">
     <device id="retina6_5" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15706"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="Stack View standard spacing" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -218,7 +218,22 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ch6-aH-fU9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome To Home Page" id="hOH-Do-KO8"/>
+                    <navigationItem key="navigationItem" title="Welcome To Home Page" id="hOH-Do-KO8">
+                        <barButtonItem key="leftBarButtonItem" style="plain" id="yvP-sc-TMn" userLabel="Logout">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F2i-Bk-8i2">
+                                <rect key="frame" x="20" y="7" width="92" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal">
+                                    <string key="title" base64-UTF8="YES">
+CExvZ291dA
+</string>
+                                </state>
+                            </button>
+                            <connections>
+                                <action selector="handleLogout:" destination="UMc-dp-fHJ" id="Ovr-nD-VpB"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
                         <outlet property="FaceBookButton" destination="noa-T7-AcM" id="mCs-UP-rhN"/>
@@ -229,6 +244,7 @@
                         <outlet property="RequestInfoButton" destination="zgd-Bz-cOC" id="Zus-Ns-nCZ"/>
                         <outlet property="SignInButton" destination="ItC-pt-Ok4" id="f8n-eQ-dQu"/>
                         <outlet property="TwitterButton" destination="09F-wa-nJY" id="a5k-rp-DOy"/>
+                        <outlet property="logout" destination="yvP-sc-TMn" id="rrF-mT-Ehh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5Y-nQ-UDc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

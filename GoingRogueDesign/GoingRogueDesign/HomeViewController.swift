@@ -27,6 +27,7 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var GRDURLButton: UIButton!
     
     @IBOutlet weak var LinkButton: UIButton!
+    @IBOutlet weak var logout: UIBarButtonItem!
     
     var tabBarItem1: UITabBarItem?
     var tabBarItem2: UITabBarItem?
@@ -115,5 +116,15 @@ class HomeViewController: UIViewController {
     
     @IBAction func LinkButtonTapped(_ sender: Any) {
         UIApplication.shared.open(URL(string:"https://www.goingroguedesignllc.com")! as URL, options: [:], completionHandler: nil)
+    }
+    
+    
+    @IBAction func handleLogout(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+          print ("Error signing out: %@", signOutError)
+        }
     }
 }
