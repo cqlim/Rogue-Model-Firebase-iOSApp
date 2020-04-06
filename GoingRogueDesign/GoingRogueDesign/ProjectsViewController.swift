@@ -34,17 +34,11 @@ class ProjectsViewController: UIViewController {
             else{
                 for document in QuerySnapshot!.documents{
                     if (documentEmail == document.get("customerEmail") as? String){
-  
-                        // Guarding the force unwrap to avoid program crashing
-//                        guard document.get("projectStartDate") != nil else{
-//                            print("No valid date")
-//                            return
-//                        }
                         
                         let timeStamp = document.get("projectStartDate") as! Timestamp
-                        let dateString = self.dateConvertToString(date: timeStamp.dateValue())
+                        let dateString = dateConvertToString(date: timeStamp.dateValue())
                        
-                        let _Project = Project(title: document.get("projectName") as? String ?? "N/A", address: document.get("projectAddress") as? String ?? "N/A", status: document.get("projectType") as? String ?? "N/A", startDate: dateString, description: document.get("projectDescription") as? String ?? "N/A")
+                        let _Project = Project(title: document.get("projectName") as? String ?? "N/A", address: document.get("projectAddress") as? String ?? "N/A", status: document.get("projectType") as? String ?? "N/A", startDate: dateString, description: document.get("projectDescription") as? String ?? "N/A", id: document.get("projectID") as? String ?? "N/A")
                         
                         self.projects.append(_Project)
                     }
@@ -54,15 +48,6 @@ class ProjectsViewController: UIViewController {
             
         }
         
-    }
-    
-    // Takes the time stamp and convert to date
-    func dateConvertToString(date: Date) -> String{
-        let df = DateFormatter()
-        df.amSymbol = "AM"
-        df.pmSymbol = "PM"
-        df.dateFormat = "yyyy-MM-dd' at 'hh:mm a"
-        return df.string(from: date)
     }
 
 }
@@ -91,7 +76,6 @@ extension ProjectsViewController: UITableViewDataSource, UITableViewDelegate{
         performSegue(withIdentifier: "ShowProjectDetail", sender: self)
         
         tableView.deselectRow(at: indexPath, animated: true)
-
     }
     
     // Pass data through segue
@@ -102,5 +86,6 @@ extension ProjectsViewController: UITableViewDataSource, UITableViewDelegate{
                 vc.project = projects[row]
             }
         }
+        
     }
 }

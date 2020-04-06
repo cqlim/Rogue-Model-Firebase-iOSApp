@@ -13,12 +13,13 @@ class Project {
     var address: String
     var status: String
     var startDate: String
-//    var startDate: Date
+    var id: String
     var description: String
     
 //    var date = Date()
     
-    init(title: String, address: String, status: String, startDate: String, description: String) {
+    init(title: String, address: String, status: String, startDate: String, description: String, id: String) {
+        self.id = id
         self.title = title
         self.address = address
         self.status = status

@@ -8,7 +8,10 @@
 
 /* Begin PBXBuildFile section */
 		38162E3E23F8E3BB008C698C /* ShowContractorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38162E3D23F8E3BB008C698C /* ShowContractorInfoViewController.swift */; };
+		382344852430382D0036E060 /* InvoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382344842430382D0036E060 /* InvoicesViewController.swift */; };
 		385F486223E3864A00035854 /* ReqInfoSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */; };
+		386D6F9D24327F1C003BD375 /* InvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6F9C24327F1C003BD375 /* InvoicesCell.swift */; };
+		386D6F9F243281E8003BD375 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6F9E243281E8003BD375 /* Invoice.swift */; };
 		388E7F6723F53D14003E533B /* EditContractorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E7F6623F53D14003E533B /* EditContractorsViewController.swift */; };
 		38A83DDC23DA787300B2FB8C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A83DDB23DA787300B2FB8C /* HomeViewController.swift */; };
 		38A83DDE23DA788F00B2FB8C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A83DDD23DA788F00B2FB8C /* CalculatorViewController.swift */; };
@@ -26,18 +29,29 @@
 		520B4FC32412DD3D009A3579 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B4FC22412DD3D009A3579 /* ProjectDetailViewController.swift */; };
 		52235F4C23FD42F90071A06C /* ProjectsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52235F4B23FD42F90071A06C /* ProjectsViewCell.swift */; };
 		52235F4E23FD47020071A06C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52235F4D23FD47020071A06C /* Project.swift */; };
+		528DF0AD24303D3100D96820 /* ProjectDocumentsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528DF0AC24303D3100D96820 /* ProjectDocumentsViewController.swift */; };
+		528DF0AF2430533000D96820 /* DocumentsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528DF0AE2430533000D96820 /* DocumentsViewCell.swift */; };
+		528DF0B12430560B00D96820 /* Document.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528DF0B02430560B00D96820 /* Document.swift */; };
+		528DF0B32431887500D96820 /* HelperFunctions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 528DF0B22431887500D96820 /* HelperFunctions.swift */; };
 		52D7894B23D1A2D3001922CE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D7894A23D1A2D3001922CE /* AppDelegate.swift */; };
 		52D7894D23D1A2D3001922CE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D7894C23D1A2D3001922CE /* SceneDelegate.swift */; };
 		52D7894F23D1A2D3001922CE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52D7894E23D1A2D3001922CE /* ViewController.swift */; };
 		52D7895223D1A2D3001922CE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D7895023D1A2D3001922CE /* Main.storyboard */; };
 		52D7895423D1A2D8001922CE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 52D7895323D1A2D8001922CE /* Assets.xcassets */; };
 		52D7895723D1A2D8001922CE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 52D7895523D1A2D8001922CE /* LaunchScreen.storyboard */; };
+		606A2FAC243935F300CC4A65 /* TaskViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A2FAB243935F300CC4A65 /* TaskViewCell.swift */; };
+		606A2FB0243946CE00CC4A65 /* MoreTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 606A2FAF243946CE00CC4A65 /* MoreTaskViewController.swift */; };
+		60ABFDD724369E2F00CA0323 /* TaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABFDD624369E2F00CA0323 /* TaskViewController.swift */; };
+		60ABFDDB2436B5CA00CA0323 /* Task.swift in Sources */ = {isa = PBXBuildFile; fileRef = 60ABFDDA2436B5CA00CA0323 /* Task.swift */; };
 		DF58F5FA6B74930ABFACF9C1 /* Pods_GoingRogueDesign.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AE92B235EEC9F416FEE0A488 /* Pods_GoingRogueDesign.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
 		38162E3D23F8E3BB008C698C /* ShowContractorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowContractorInfoViewController.swift; sourceTree = "<group>"; };
+		382344842430382D0036E060 /* InvoicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicesViewController.swift; sourceTree = "<group>"; };
 		385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqInfoSubmitViewController.swift; sourceTree = "<group>"; };
+		386D6F9C24327F1C003BD375 /* InvoicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicesCell.swift; sourceTree = "<group>"; };
+		386D6F9E243281E8003BD375 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
 		388E7F6623F53D14003E533B /* EditContractorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractorsViewController.swift; sourceTree = "<group>"; };
 		38A83DDB23DA787300B2FB8C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		38A83DDD23DA788F00B2FB8C /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
@@ -55,6 +69,10 @@
 		520B4FC22412DD3D009A3579 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 		52235F4B23FD42F90071A06C /* ProjectsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewCell.swift; sourceTree = "<group>"; };
 		52235F4D23FD47020071A06C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
+		528DF0AC24303D3100D96820 /* ProjectDocumentsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDocumentsViewController.swift; sourceTree = "<group>"; };
+		528DF0AE2430533000D96820 /* DocumentsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DocumentsViewCell.swift; sourceTree = "<group>"; };
+		528DF0B02430560B00D96820 /* Document.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Document.swift; sourceTree = "<group>"; };
+		528DF0B22431887500D96820 /* HelperFunctions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HelperFunctions.swift; sourceTree = "<group>"; };
 		52D7894723D1A2D3001922CE /* GoingRogueDesign.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = GoingRogueDesign.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		52D7894A23D1A2D3001922CE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		52D7894C23D1A2D3001922CE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -63,6 +81,10 @@
 		52D7895323D1A2D8001922CE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		52D7895623D1A2D8001922CE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		52D7895823D1A2D8001922CE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		606A2FAB243935F300CC4A65 /* TaskViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewCell.swift; sourceTree = "<group>"; };
+		606A2FAF243946CE00CC4A65 /* MoreTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTaskViewController.swift; sourceTree = "<group>"; };
+		60ABFDD624369E2F00CA0323 /* TaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TaskViewController.swift; sourceTree = "<group>"; };
+		60ABFDDA2436B5CA00CA0323 /* Task.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Task.swift; sourceTree = "<group>"; };
 		91528671EA1130D0E0021C0E /* Pods-GoingRogueDesign.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoingRogueDesign.debug.xcconfig"; path = "Target Support Files/Pods-GoingRogueDesign/Pods-GoingRogueDesign.debug.xcconfig"; sourceTree = "<group>"; };
 		A8180A5510ACF6872832A0B7 /* Pods-GoingRogueDesign.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-GoingRogueDesign.release.xcconfig"; path = "Target Support Files/Pods-GoingRogueDesign/Pods-GoingRogueDesign.release.xcconfig"; sourceTree = "<group>"; };
 		AE92B235EEC9F416FEE0A488 /* Pods_GoingRogueDesign.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_GoingRogueDesign.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -89,6 +111,10 @@
 				38BBBEBD23E12C0300B11C03 /* LoSPopupViewController.swift */,
 				38A83DDD23DA788F00B2FB8C /* CalculatorViewController.swift */,
 				38A83DDF23DA78A400B2FB8C /* ProjectsViewController.swift */,
+				52235F4B23FD42F90071A06C /* ProjectsViewCell.swift */,
+				520B4FC22412DD3D009A3579 /* ProjectDetailViewController.swift */,
+				382344842430382D0036E060 /* InvoicesViewController.swift */,
+				386D6F9C24327F1C003BD375 /* InvoicesCell.swift */,
 				38A83DE123DA78B000B2FB8C /* AccountViewController.swift */,
 				385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */,
 				38B66F8A23F38D15008F3F40 /* EditAccountViewController.swift */,
@@ -96,6 +122,11 @@
 				38162E3D23F8E3BB008C698C /* ShowContractorInfoViewController.swift */,
 				52235F4B23FD42F90071A06C /* ProjectsViewCell.swift */,
 				520B4FC22412DD3D009A3579 /* ProjectDetailViewController.swift */,
+				528DF0AC24303D3100D96820 /* ProjectDocumentsViewController.swift */,
+				528DF0AE2430533000D96820 /* DocumentsViewCell.swift */,
+				60ABFDD624369E2F00CA0323 /* TaskViewController.swift */,
+				606A2FAB243935F300CC4A65 /* TaskViewCell.swift */,
+				606A2FAF243946CE00CC4A65 /* MoreTaskViewController.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -105,6 +136,10 @@
 			children = (
 				38B970C023E0D4F5000B89D5 /* Constants.swift */,
 				52235F4D23FD47020071A06C /* Project.swift */,
+				528DF0B02430560B00D96820 /* Document.swift */,
+				528DF0B22431887500D96820 /* HelperFunctions.swift */,
+				60ABFDDA2436B5CA00CA0323 /* Task.swift */,
+				386D6F9E243281E8003BD375 /* Invoice.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -292,23 +327,34 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				606A2FB0243946CE00CC4A65 /* MoreTaskViewController.swift in Sources */,
 				38B66F8B23F38D15008F3F40 /* EditAccountViewController.swift in Sources */,
 				38BBBEBE23E12C0300B11C03 /* LoSPopupViewController.swift in Sources */,
 				38A83DE023DA78A400B2FB8C /* ProjectsViewController.swift in Sources */,
 				38A83DDE23DA788F00B2FB8C /* CalculatorViewController.swift in Sources */,
 				52235F4C23FD42F90071A06C /* ProjectsViewCell.swift in Sources */,
+				528DF0B12430560B00D96820 /* Document.swift in Sources */,
+				386D6F9D24327F1C003BD375 /* InvoicesCell.swift in Sources */,
 				38A83DE223DA78B000B2FB8C /* AccountViewController.swift in Sources */,
 				52D7894F23D1A2D3001922CE /* ViewController.swift in Sources */,
 				38B9709B23E0D452000B89D5 /* LoginViewController.swift in Sources */,
+				528DF0B32431887500D96820 /* HelperFunctions.swift in Sources */,
 				388E7F6723F53D14003E533B /* EditContractorsViewController.swift in Sources */,
+				382344852430382D0036E060 /* InvoicesViewController.swift in Sources */,
 				38162E3E23F8E3BB008C698C /* ShowContractorInfoViewController.swift in Sources */,
 				52235F4E23FD47020071A06C /* Project.swift in Sources */,
 				388E7F6723F53D14003E533B /* EditContractorsViewController.swift in Sources */,
 				52D7894B23D1A2D3001922CE /* AppDelegate.swift in Sources */,
 				52D7894D23D1A2D3001922CE /* SceneDelegate.swift in Sources */,
+				60ABFDDB2436B5CA00CA0323 /* Task.swift in Sources */,
+				386D6F9F243281E8003BD375 /* Invoice.swift in Sources */,
 				38A83DDC23DA787300B2FB8C /* HomeViewController.swift in Sources */,
+				528DF0AF2430533000D96820 /* DocumentsViewCell.swift in Sources */,
 				385F486223E3864A00035854 /* ReqInfoSubmitViewController.swift in Sources */,
+				60ABFDD724369E2F00CA0323 /* TaskViewController.swift in Sources */,
 				38B970C123E0D4F5000B89D5 /* Constants.swift in Sources */,
+				606A2FAC243935F300CC4A65 /* TaskViewCell.swift in Sources */,
+				528DF0AD24303D3100D96820 /* ProjectDocumentsViewController.swift in Sources */,
 				520B4FC32412DD3D009A3579 /* ProjectDetailViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
