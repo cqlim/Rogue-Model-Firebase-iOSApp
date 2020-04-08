@@ -16,22 +16,15 @@ class Project {
     var id: String
     var description: String
     
-    // The Firebase floating point is 64 bit
-    var longitude: Float64
-    var latitude: Float64
+//    var date = Date()
     
-    var managerID: String
-        
-    init(title: String, address: String, status: String, startDate: String, description: String, id: String, longitude: Float64, latitude: Float64, managerID: String) {
+    init(title: String, address: String, status: String, startDate: String, description: String, id: String) {
         self.id = id
         self.title = title
         self.address = address
         self.status = status
         self.startDate = startDate
         self.description = description
-        self.longitude = longitude
-        self.latitude = latitude
-        self.managerID = managerID
     }
     
     

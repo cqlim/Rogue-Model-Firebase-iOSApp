@@ -40,34 +40,11 @@ class ProjectDetailViewController: UIViewController {
         InvoiceButton.layer.cornerRadius = 10
         TaskButton.layer.cornerRadius = 10
         CalendarButton.layer.cornerRadius = 10
-        
-        // Allow the address as a label to be clickable
-        let addressTap = UITapGestureRecognizer(target: self, action: #selector(ProjectDetailViewController.addressFunctionTap))
-        ProjectAddress.isUserInteractionEnabled = true
-        ProjectAddress.addGestureRecognizer(addressTap)
-    }
-    
-    
-    // Launch Apple map for the address requested
-    @objc func addressFunctionTap(sender:UITapGestureRecognizer){
-        print("address is clicked!")
-        let longtitude = project.longitude
-        let latitude = project.latitude
-        let address = "?ll=\(latitude),\(longtitude)"
-        let url = URL(string: "http://maps.apple.com/?address=\(address)")
-
-        print("url: \(url!)")
-
-
-        UIApplication.shared.open(url!, options: [:], completionHandler: nil)
-        print("address open?")
     }
     
     @IBAction func InvoiceButtonTapped(_ sender: Any) {
         performSegue(withIdentifier: "goInvoicesList", sender: self)
     }
-    
-    
     // Pass data through segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
         if segue.identifier == "ShowProjectDocuments"{
