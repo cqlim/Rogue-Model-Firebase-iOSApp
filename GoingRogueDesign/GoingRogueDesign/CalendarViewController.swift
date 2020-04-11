@@ -1,24 +1,25 @@
 //
-//  InvoicesViewController.swift
+//  CalendarViewController.swift
 //  GoingRogueDesign
 //
-//  Created by Zhang Yuanjun on 3/28/20.
+//  Created by Zhang Yuanjun on 4/10/20.
 //  Copyright © 2020 Jeff Deng. All rights reserved.
 //
 
 import UIKit
 import Firebase
 
-class InvoicesViewController: UIViewController {
+class CalendarViewController: UIViewController {
+    
     
     @IBOutlet weak var tableview: UITableView!
     
     var project: Project!
-    var invoices: [Invoice] = []
+    var calendars: [Calendar] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = project.title
+        self.title = "Calendar"
         createArray()
         
         tableview.dataSource = self
@@ -32,22 +33,20 @@ class InvoicesViewController: UIViewController {
         
         print("ProjectID： \(projectID)")
         
-        db.collection("Invoice").whereField("projectID", isEqualTo: projectID)
+        db.collection("Calender").whereField("projectID", isEqualTo: projectID)
             .getDocuments() { (querySnapshot, err) in
                 if err != nil {
-                    print("Error getting invoices: \(err)")
+                    print("Error getting calendar: \(err)")
                 } else {
-                    for currentInvoice in querySnapshot!.documents {
-                        print("Project name： \(currentInvoice.get("invoiceName"))")
-                        let uploadDateTimeStamp = currentInvoice.get("invoiceDueDate") as! Timestamp
-                        let uploadDateString = self.dateConvertToString(date: uploadDateTimeStamp.dateValue())
+                    for currentCalendar in querySnapshot!.documents {
+                        print("Calendar name： \(currentCalendar.get("calanderName"))")
                         
                         
                         
-                        let invoice = Invoice(dueDate: uploadDateString, url: currentInvoice.get("invoiceLink") as? String ?? "N/A", name: currentInvoice.get("invoiceName") as? String ?? "N/A", type: (currentInvoice.get("invoiceType") as? String)!, projectID: currentInvoice.get("projectID") as? String ?? "N/A")
+                        let calendar = Calendar(name: currentCalendar.get("calanderName") as? String ?? "N/A",link: currentCalendar.get("calanderLink") as? String ?? "N/A", projectID: currentCalendar.get("projectID") as? String ?? "N/A")
                         
-                        self.invoices.append(invoice)
-                        print("Project Name: \(invoice.name)")
+                        self.calendars.append(calendar)
+                        print("Calendar Name: \(calendar.name)")
                     }
                         
                     self.tableview.reloadData()
@@ -68,24 +67,24 @@ class InvoicesViewController: UIViewController {
 
 }
 
-extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
+extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return invoices.count
+        return calendars.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let currInvoice = invoices[indexPath.row]
+        let currCalendar = calendars[indexPath.row]
         
-        let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceCell") as! InvoicesCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: "CalendarCell") as! CalendarViewCell
         
-        cell.setInvoice(invoice: currInvoice)
+        cell.setCalendar(calendar: currCalendar)
         
         return cell
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let currInvoice = invoices[indexPath.row]
-        let url = currInvoice.url
+        let currCalendar = calendars[indexPath.row]
+        let url = currCalendar.link
         
         UIApplication.shared.open(URL(string:url)! as URL, options: [:], completionHandler: nil)
     }
