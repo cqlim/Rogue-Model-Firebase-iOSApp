@@ -58,7 +58,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vp4-nN-a51"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome To Account Page" id="sYb-iC-sjG"/>
+                    <navigationItem key="navigationItem" title="Account" id="sYb-iC-sjG"/>
                     <connections>
                         <outlet property="EditAccountButton" destination="N88-an-cxZ" id="So3-PU-d9v"/>
                         <outlet property="EditContractorsButton" destination="6SN-6C-ve2" id="x0t-yl-Ou6"/>

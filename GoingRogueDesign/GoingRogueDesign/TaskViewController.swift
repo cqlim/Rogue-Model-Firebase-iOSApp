@@ -21,6 +21,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = project.title
         createTaskArray()
     }
     

@@ -18,7 +18,7 @@ class InvoicesViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        self.title = project.title
+        navigationItem.title = project.title
         createArray()
         
         tableview.dataSource = self
