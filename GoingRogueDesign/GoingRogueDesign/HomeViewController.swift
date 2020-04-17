@@ -72,13 +72,6 @@ class HomeViewController: UIViewController {
                 }
             }
         }
-        
-//        collection.getDocument{(document, error) in
-//            if let document = document{
-//                let firstName = document.get("customerFirstName") as? String ?? "N/A"
-//                self.SignInButton.setTitle("Welcome, " + firstName, for: .normal)
-//            }
-//        }
     }
     
     func userTabBarValidation(){
@@ -118,13 +111,4 @@ class HomeViewController: UIViewController {
         UIApplication.shared.open(URL(string:"https://www.goingroguedesignllc.com")! as URL, options: [:], completionHandler: nil)
     }
     
-    
-    @IBAction func handleLogout(_ sender: Any) {
-        let firebaseAuth = Auth.auth()
-        do {
-          try firebaseAuth.signOut()
-        } catch let signOutError as NSError {
-          print ("Error signing out: %@", signOutError)
-        }
-    }
 }

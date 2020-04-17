@@ -66,7 +66,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="4Cm-W3-ily" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2011.594202898551" y="409.82142857142856"/>
+            <point key="canvasLocation" x="2243" y="410"/>
         </scene>
         <!--Project Detail View Controller-->
         <scene sceneID="C9a-EL-LLd">
@@ -174,6 +174,9 @@
                                         <state key="normal" title="Calendar">
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="fA8-1d-POb" kind="show" identifier="goCalendarList" id="Ief-lt-adn"/>
+                                        </connections>
                                     </button>
                                 </subviews>
                                 <constraints>
@@ -211,7 +214,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QL7-Jl-bWs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3031.884057971015" y="409.82142857142856"/>
+            <point key="canvasLocation" x="3535" y="788"/>
         </scene>
         <!--Project Documents View Controller-->
         <scene sceneID="YtF-Pw-rLP">
@@ -279,7 +282,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EmK-iQ-wGF" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2450.7246376811595" y="1258.9285714285713"/>
+            <point key="canvasLocation" x="1646" y="1595"/>
         </scene>
         <!--Task View Controller-->
         <scene sceneID="0dt-dG-u8k">
@@ -365,7 +368,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfU-da-QdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3573.913043478261" y="1242.8571428571429"/>
+            <point key="canvasLocation" x="3536" y="1594"/>
         </scene>
         <!--Invoices View Controller-->
         <scene sceneID="4Pi-iu-Ogc">
@@ -461,7 +464,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVU-nG-bdS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3789.8550724637685" y="405.80357142857139"/>
+            <point key="canvasLocation" x="5074" y="240"/>
         </scene>
         <!--Projects-->
         <scene sceneID="CMe-3j-CAe">
@@ -561,7 +564,69 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmm-ai-Muo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4656.521739130435" y="1242.8571428571429"/>
+            <point key="canvasLocation" x="5074" y="1594"/>
+        </scene>
+        <!--Calendar View Controller-->
+        <scene sceneID="nmx-4c-A46">
+            <objects>
+                <viewController id="fA8-1d-POb" customClass="CalendarViewController" customModule="GoingRogueDesign" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XCy-9W-EZT">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="sU3-Dt-hWB">
+                                <rect key="frame" x="0.0" y="88" width="414" height="725"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="CalendarCell" rowHeight="120" id="ZCy-Yr-gan" customClass="CalendarViewCell" customModule="GoingRogueDesign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="120"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ZCy-Yr-gan" id="VKa-Q4-oZV" customClass="CalendarViewCell" customModule="GoingRogueDesign" customModuleProvider="target">
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="120"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                            <subviews>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="31K-q8-q0O" userLabel="NameLabel">
+                                                    <rect key="frame" x="107" y="26" width="200" height="68"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="height" constant="60" id="G7x-cC-Thr"/>
+                                                        <constraint firstAttribute="width" constant="200" id="LY2-9c-Y5A"/>
+                                                    </constraints>
+                                                    <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                            </subviews>
+                                            <constraints>
+                                                <constraint firstItem="31K-q8-q0O" firstAttribute="centerX" secondItem="VKa-Q4-oZV" secondAttribute="centerX" id="IBB-IF-53m"/>
+                                                <constraint firstItem="31K-q8-q0O" firstAttribute="top" secondItem="VKa-Q4-oZV" secondAttribute="topMargin" constant="15" id="Oh0-KX-yKc"/>
+                                                <constraint firstItem="31K-q8-q0O" firstAttribute="centerY" secondItem="VKa-Q4-oZV" secondAttribute="centerY" id="WCT-Vd-Uu8"/>
+                                                <constraint firstAttribute="bottomMargin" secondItem="31K-q8-q0O" secondAttribute="bottom" constant="15" id="rcF-ju-apP"/>
+                                            </constraints>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <outlet property="CalendarNameLabel" destination="31K-q8-q0O" id="9W3-sg-vA5"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="ChE-7O-awl" firstAttribute="bottom" secondItem="sU3-Dt-hWB" secondAttribute="bottom" id="63W-er-AAp"/>
+                            <constraint firstItem="sU3-Dt-hWB" firstAttribute="top" secondItem="ChE-7O-awl" secondAttribute="top" id="Jpg-kT-Suj"/>
+                            <constraint firstItem="sU3-Dt-hWB" firstAttribute="leading" secondItem="ChE-7O-awl" secondAttribute="leading" id="iog-e6-niM"/>
+                            <constraint firstItem="ChE-7O-awl" firstAttribute="trailing" secondItem="sU3-Dt-hWB" secondAttribute="trailing" id="uBk-F1-VO5"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="ChE-7O-awl"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="nfb-hw-VZ3"/>
+                    <connections>
+                        <outlet property="tableview" destination="sU3-Dt-hWB" id="nsi-NS-ewA"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="1pZ-ak-reL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="5074" y="911"/>
         </scene>
     </scenes>
     <resources>

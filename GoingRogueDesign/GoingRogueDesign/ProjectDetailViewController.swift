@@ -86,6 +86,12 @@ class ProjectDetailViewController: UIViewController {
 					vc.project = project
 				}
 			}
+        
+        if segue.identifier == "goCalendarList"{
+        if let vc = segue.destination as? CalendarViewController{
+                vc.project = project
+            }
+        }
 
     }
     

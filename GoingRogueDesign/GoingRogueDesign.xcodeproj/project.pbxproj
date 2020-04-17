@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		38105C9A24417C7800468FC5 /* CalendarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38105C9924417C7800468FC5 /* CalendarViewController.swift */; };
+		38105C9C24417D9800468FC5 /* CalendarViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38105C9B24417D9800468FC5 /* CalendarViewCell.swift */; };
+		38105C9E2441802F00468FC5 /* Calendar.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38105C9D2441802F00468FC5 /* Calendar.swift */; };
 		38162E3E23F8E3BB008C698C /* ShowContractorInfoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38162E3D23F8E3BB008C698C /* ShowContractorInfoViewController.swift */; };
 		382344852430382D0036E060 /* InvoicesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 382344842430382D0036E060 /* InvoicesViewController.swift */; };
 		385F486223E3864A00035854 /* ReqInfoSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */; };
@@ -47,6 +50,9 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		38105C9924417C7800468FC5 /* CalendarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewController.swift; sourceTree = "<group>"; };
+		38105C9B24417D9800468FC5 /* CalendarViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalendarViewCell.swift; sourceTree = "<group>"; };
+		38105C9D2441802F00468FC5 /* Calendar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Calendar.swift; sourceTree = "<group>"; };
 		38162E3D23F8E3BB008C698C /* ShowContractorInfoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShowContractorInfoViewController.swift; sourceTree = "<group>"; };
 		382344842430382D0036E060 /* InvoicesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicesViewController.swift; sourceTree = "<group>"; };
 		385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqInfoSubmitViewController.swift; sourceTree = "<group>"; };
@@ -111,8 +117,6 @@
 				38BBBEBD23E12C0300B11C03 /* LoSPopupViewController.swift */,
 				38A83DDD23DA788F00B2FB8C /* CalculatorViewController.swift */,
 				38A83DDF23DA78A400B2FB8C /* ProjectsViewController.swift */,
-				52235F4B23FD42F90071A06C /* ProjectsViewCell.swift */,
-				520B4FC22412DD3D009A3579 /* ProjectDetailViewController.swift */,
 				382344842430382D0036E060 /* InvoicesViewController.swift */,
 				386D6F9C24327F1C003BD375 /* InvoicesCell.swift */,
 				38A83DE123DA78B000B2FB8C /* AccountViewController.swift */,
@@ -127,6 +131,8 @@
 				60ABFDD624369E2F00CA0323 /* TaskViewController.swift */,
 				606A2FAB243935F300CC4A65 /* TaskViewCell.swift */,
 				606A2FAF243946CE00CC4A65 /* MoreTaskViewController.swift */,
+				38105C9924417C7800468FC5 /* CalendarViewController.swift */,
+				38105C9B24417D9800468FC5 /* CalendarViewCell.swift */,
 			);
 			name = "View Controllers";
 			sourceTree = "<group>";
@@ -140,6 +146,7 @@
 				528DF0B22431887500D96820 /* HelperFunctions.swift */,
 				60ABFDDA2436B5CA00CA0323 /* Task.swift */,
 				386D6F9E243281E8003BD375 /* Invoice.swift */,
+				38105C9D2441802F00468FC5 /* Calendar.swift */,
 			);
 			name = Helper;
 			sourceTree = "<group>";
@@ -327,7 +334,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38105C9A24417C7800468FC5 /* CalendarViewController.swift in Sources */,
+				38105C9C24417D9800468FC5 /* CalendarViewCell.swift in Sources */,
 				606A2FB0243946CE00CC4A65 /* MoreTaskViewController.swift in Sources */,
+				38105C9E2441802F00468FC5 /* Calendar.swift in Sources */,
 				38B66F8B23F38D15008F3F40 /* EditAccountViewController.swift in Sources */,
 				38BBBEBE23E12C0300B11C03 /* LoSPopupViewController.swift in Sources */,
 				38A83DE023DA78A400B2FB8C /* ProjectsViewController.swift in Sources */,

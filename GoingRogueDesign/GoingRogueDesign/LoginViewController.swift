@@ -26,6 +26,9 @@ class LoginViewController: UIViewController {
         // Do any additional setup after loading the view.
         errorLabel.alpha = 0
         loginButton.layer.cornerRadius = 15.0
+        passwordTextField.isSecureTextEntry = true
+        //secureTextEntry = false
+        
     }
     
 

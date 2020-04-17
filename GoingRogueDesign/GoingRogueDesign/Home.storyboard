@@ -218,22 +218,7 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="ch6-aH-fU9"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Home" id="hOH-Do-KO8">
-                        <barButtonItem key="leftBarButtonItem" style="plain" id="yvP-sc-TMn" userLabel="Logout">
-                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" id="F2i-Bk-8i2">
-                                <rect key="frame" x="20" y="7" width="92" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <state key="normal">
-                                    <string key="title" base64-UTF8="YES">
-CExvZ291dA
-</string>
-                                </state>
-                            </button>
-                            <connections>
-                                <action selector="handleLogout:" destination="UMc-dp-fHJ" id="Ovr-nD-VpB"/>
-                            </connections>
-                        </barButtonItem>
-                    </navigationItem>
+                    <navigationItem key="navigationItem" title="Welcome To Home Page" id="hOH-Do-KO8"/>
                     <size key="freeformSize" width="414" height="1100"/>
                     <connections>
                         <outlet property="FaceBookButton" destination="noa-T7-AcM" id="mCs-UP-rhN"/>
@@ -244,7 +229,6 @@ CExvZ291dA
                         <outlet property="RequestInfoButton" destination="zgd-Bz-cOC" id="Zus-Ns-nCZ"/>
                         <outlet property="SignInButton" destination="ItC-pt-Ok4" id="f8n-eQ-dQu"/>
                         <outlet property="TwitterButton" destination="09F-wa-nJY" id="a5k-rp-DOy"/>
-                        <outlet property="logout" destination="yvP-sc-TMn" id="rrF-mT-Ehh"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5Y-nQ-UDc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
