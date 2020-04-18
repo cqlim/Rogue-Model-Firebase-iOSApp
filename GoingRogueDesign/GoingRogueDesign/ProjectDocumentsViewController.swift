@@ -23,6 +23,7 @@ class ProjectDocumentsViewController: UIViewController {
         createDocumentArray()
         DocumentTableView.delegate = self
         DocumentTableView.dataSource = self
+        DocumentTableView.translatesAutoresizingMaskIntoConstraints = true
         
     }
     

@@ -11,30 +11,22 @@ import UIKit
 class MoreTaskViewController: UIViewController {
 
     var tasks: Task!
-    @IBOutlet weak var taskName: UILabel!
-    @IBOutlet weak var taskType: UILabel!
-    @IBOutlet weak var taskDescription: UILabel!
-    @IBOutlet weak var taskDueDate: UILabel!
 
+    @IBOutlet weak var TaskDueDate: UILabel!
+    @IBOutlet weak var TaskType: UILabel!
+    @IBOutlet weak var TaskDescription: UILabel!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        taskName.text = tasks.taskname
-        taskType.text = tasks.tasktype
-        taskDescription.text = tasks.taskdescription
-        taskDueDate.text = tasks.taskdueDate
-        // Do any additional setup after loading the view.
+        navigationItem.title = tasks.taskname
+        labelInit()
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    
+    func labelInit(){
+        TaskDueDate.attributedText = attributedText(withString: "Due Date: \(tasks.taskdueDate)", boldString: "Due Date:", font: TaskDueDate.font)
+        TaskType.attributedText = attributedText(withString: "Status: \(tasks.tasktype)", boldString: "Status:", font: TaskType.font)
+        TaskDescription.attributedText = attributedText(withString: "Description: \(tasks.taskdescription)", boldString: "Description", font: TaskDescription.font)
     }
-    */
 
 }

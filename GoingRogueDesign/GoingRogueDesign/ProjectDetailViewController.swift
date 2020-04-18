@@ -17,6 +17,8 @@ class ProjectDetailViewController: UIViewController {
     @IBOutlet weak var ProjectDescription: UILabel!
     @IBOutlet weak var ProjectStatus: UILabel!
     @IBOutlet weak var ProjectStartDate: UILabel!
+    @IBOutlet weak var ProjectManager: UILabel!
+    @IBOutlet weak var ProjectMainContractor: UILabel!
     
     // Buttons    
     @IBOutlet weak var DocumentButton: UIButton!
@@ -30,11 +32,7 @@ class ProjectDetailViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        ProjectTitle.text = project.title
-        ProjectAddress.text = project.address
-        ProjectStatus.text = "Status: " + project.status
-        ProjectDescription.text = "Description: " + project.description
-        ProjectStartDate.text = "Start Date: " + project.startDate
+        labelInit()
 
         DocumentButton.layer.cornerRadius = 10
         InvoiceButton.layer.cornerRadius = 10
@@ -46,6 +44,18 @@ class ProjectDetailViewController: UIViewController {
         ProjectAddress.isUserInteractionEnabled = true
         ProjectAddress.addGestureRecognizer(addressTap)
     }
+    
+    func labelInit(){
+        ProjectTitle.text = project.title
+        ProjectAddress.text = project.address
+        ProjectStatus.attributedText = attributedText(withString: "Status: \(project.status)", boldString: "Status", font: ProjectStatus.font)
+        ProjectDescription.attributedText = attributedText(withString: "Description: \(project.description)", boldString: "Description", font: ProjectDescription.font)
+        ProjectStartDate.attributedText = attributedText(withString: "Start Date: \(project.startDate)", boldString: "Start Date", font: ProjectStartDate.font)
+        ProjectManager.attributedText = attributedText(withString: "Manager:  \(project.manager)", boldString: "Manager", font: ProjectManager.font)
+        ProjectMainContractor.attributedText = attributedText(withString: "Main Contractor: \(project.mainContractor)", boldString: "Main Contractor:", font: ProjectMainContractor.font)
+    }
+    
+    
     
     
     // Launch Apple map for the address requested

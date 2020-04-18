@@ -20,9 +20,10 @@ class Project {
     var longitude: Float64
     var latitude: Float64
     
-    var managerID: String
+    var manager: String
+    var mainContractor: String
         
-    init(title: String, address: String, status: String, startDate: String, description: String, id: String, longitude: Float64, latitude: Float64, managerID: String) {
+    init(title: String, address: String, status: String, startDate: String, description: String, id: String, longitude: Float64, latitude: Float64, manager: String, mainContractor: String) {
         self.id = id
         self.title = title
         self.address = address
@@ -31,7 +32,8 @@ class Project {
         self.description = description
         self.longitude = longitude
         self.latitude = latitude
-        self.managerID = managerID
+        self.manager = manager
+        self.mainContractor = mainContractor
     }
     
     
