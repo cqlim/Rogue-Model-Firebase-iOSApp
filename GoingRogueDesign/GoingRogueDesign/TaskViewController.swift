@@ -21,6 +21,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        navigationItem.title = project.title
         createTaskArray()
     }
     
@@ -57,9 +58,9 @@ class TaskViewController: UIViewController, UITableViewDataSource {
            return tasks.count
        }
        
-       func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         
-         let task = tasks[indexPath.row]
+        let task = tasks[indexPath.row]
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskViewCell
         
@@ -68,7 +69,13 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
         return cell
        }
-    
+  
+    // Might need to redo the segue because this currently doesn't work
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "ShowMoreTask", sender: self)
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+//
     
     // Pass data through segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){

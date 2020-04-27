@@ -16,52 +16,114 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N88-an-cxZ">
-                                <rect key="frame" x="40" y="288" width="334" height="65"/>
-                                <color key="backgroundColor" red="0.47684186699999997" green="0.50480759139999998" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Eyt-IS-zd0"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
-                                <state key="normal" title="Edit Account Information">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="ONb-bB-LLg" kind="show" id="nOS-56-MsE"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SN-6C-ve2">
-                                <rect key="frame" x="40" y="443" width="334" height="65"/>
-                                <color key="backgroundColor" red="1" green="0.49327188729999999" blue="0.47399842739999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="65" id="Jk9-hy-6bx"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
-                                <state key="normal" title="Edit Contractors">
-                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                </state>
-                                <connections>
-                                    <segue destination="jBW-ww-ISS" kind="show" identifier="goToContractorList" id="IPs-Tq-haK"/>
-                                </connections>
-                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Infomation" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="qeY-EZ-q1x">
+                                <rect key="frame" x="40" y="128" width="334" height="22.5"/>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="4QI-hZ-fry">
+                                <rect key="frame" x="40" y="553" width="334" height="190"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="N88-an-cxZ">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Eyt-IS-zd0"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
+                                        <state key="normal" title="Edit Account Information">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="ONb-bB-LLg" kind="show" id="nOS-56-MsE"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="6SN-6C-ve2">
+                                        <rect key="frame" x="0.0" y="70" width="334" height="50"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="Jk9-hy-6bx"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
+                                        <state key="normal" title="Edit Contractors">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="jBW-ww-ISS" kind="show" identifier="goToContractorList" id="IPs-Tq-haK"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="maZ-yX-6fz" userLabel="Log Out Button">
+                                        <rect key="frame" x="0.0" y="140" width="334" height="50"/>
+                                        <color key="backgroundColor" systemColor="systemPinkColor" red="1" green="0.1764705882" blue="0.33333333329999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="50" id="155-Da-tPM"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="19"/>
+                                        <state key="normal" title="Log Out">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="LogOutButtonTapped:" destination="eyv-vV-kGT" eventType="touchUpInside" id="o5m-DN-o6i"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="f4P-KX-eY8">
+                                <rect key="frame" x="40" y="190.5" width="334" height="157"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fD7-O5-5cA">
+                                        <rect key="frame" x="0.0" y="0.0" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Email" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Gyd-dg-e0i">
+                                        <rect key="frame" x="0.0" y="45.5" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Phone Number" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ESr-nW-asZ">
+                                        <rect key="frame" x="0.0" y="91" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Address" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="uaf-wj-gwW">
+                                        <rect key="frame" x="0.0" y="136.5" width="334" height="20.5"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="18"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6SN-6C-ve2" firstAttribute="centerX" secondItem="Xp0-lb-czM" secondAttribute="centerX" id="ANH-cS-2iF"/>
-                            <constraint firstItem="6SN-6C-ve2" firstAttribute="leading" secondItem="Vp4-nN-a51" secondAttribute="leading" constant="40" id="ANm-WL-1KZ"/>
-                            <constraint firstItem="Vp4-nN-a51" firstAttribute="trailing" secondItem="N88-an-cxZ" secondAttribute="trailing" constant="40" id="QUD-FD-nHy"/>
-                            <constraint firstItem="Vp4-nN-a51" firstAttribute="trailing" secondItem="6SN-6C-ve2" secondAttribute="trailing" constant="40" id="VlP-VX-uuW"/>
-                            <constraint firstItem="N88-an-cxZ" firstAttribute="leading" secondItem="Vp4-nN-a51" secondAttribute="leading" constant="40" id="Yum-jK-Cu4"/>
-                            <constraint firstItem="6SN-6C-ve2" firstAttribute="top" secondItem="N88-an-cxZ" secondAttribute="bottom" constant="90" id="alz-xn-Adp"/>
-                            <constraint firstItem="N88-an-cxZ" firstAttribute="centerX" secondItem="Xp0-lb-czM" secondAttribute="centerX" id="ceE-8Z-067"/>
-                            <constraint firstItem="N88-an-cxZ" firstAttribute="top" secondItem="Vp4-nN-a51" secondAttribute="top" constant="200" id="nQa-xp-8Dv"/>
+                            <constraint firstItem="Vp4-nN-a51" firstAttribute="trailing" secondItem="4QI-hZ-fry" secondAttribute="trailing" constant="40" id="2Dz-Lp-d5y"/>
+                            <constraint firstItem="f4P-KX-eY8" firstAttribute="centerX" secondItem="Xp0-lb-czM" secondAttribute="centerX" id="8k9-BN-Whq"/>
+                            <constraint firstItem="Vp4-nN-a51" firstAttribute="trailing" secondItem="f4P-KX-eY8" secondAttribute="trailing" constant="40" id="KpJ-Xc-00Z"/>
+                            <constraint firstItem="qeY-EZ-q1x" firstAttribute="top" secondItem="Vp4-nN-a51" secondAttribute="top" constant="40" id="Ln4-DT-qa0"/>
+                            <constraint firstItem="4QI-hZ-fry" firstAttribute="leading" secondItem="Vp4-nN-a51" secondAttribute="leading" constant="40" id="Rzq-Bx-UHz"/>
+                            <constraint firstItem="Vp4-nN-a51" firstAttribute="trailing" secondItem="qeY-EZ-q1x" secondAttribute="trailing" constant="40" id="Xz5-sL-Edp"/>
+                            <constraint firstItem="Vp4-nN-a51" firstAttribute="bottom" secondItem="4QI-hZ-fry" secondAttribute="bottom" constant="70" id="asK-1q-IUA"/>
+                            <constraint firstItem="4QI-hZ-fry" firstAttribute="centerX" secondItem="Xp0-lb-czM" secondAttribute="centerX" id="ea5-DO-Qse"/>
+                            <constraint firstItem="qeY-EZ-q1x" firstAttribute="leading" secondItem="Vp4-nN-a51" secondAttribute="leading" constant="40" id="vex-lr-Kgk"/>
+                            <constraint firstItem="f4P-KX-eY8" firstAttribute="leading" secondItem="Vp4-nN-a51" secondAttribute="leading" constant="40" id="wgs-IQ-TrL"/>
+                            <constraint firstItem="f4P-KX-eY8" firstAttribute="top" secondItem="qeY-EZ-q1x" secondAttribute="bottom" constant="40" id="yyt-bq-TSY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="Vp4-nN-a51"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Welcome To Account Page" id="sYb-iC-sjG"/>
+                    <navigationItem key="navigationItem" title="Account" id="sYb-iC-sjG"/>
                     <connections>
                         <outlet property="EditAccountButton" destination="N88-an-cxZ" id="So3-PU-d9v"/>
                         <outlet property="EditContractorsButton" destination="6SN-6C-ve2" id="x0t-yl-Ou6"/>
+                        <outlet property="LogOutButton" destination="maZ-yX-6fz" id="8VB-wu-tzg"/>
+                        <outlet property="addressLabel" destination="uaf-wj-gwW" id="Usi-tl-PJh"/>
+                        <outlet property="emailLabel" destination="Gyd-dg-e0i" id="c3z-AX-VYh"/>
+                        <outlet property="nameLabel" destination="fD7-O5-5cA" id="XbN-bO-1N7"/>
+                        <outlet property="phoneNumberLabel" destination="ESr-nW-asZ" id="z4c-0l-txX"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOG-we-1zy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
