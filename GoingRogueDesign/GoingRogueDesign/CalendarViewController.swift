@@ -87,6 +87,9 @@ extension CalendarViewController: UITableViewDataSource, UITableViewDelegate{
         let url = currCalendar.link
         
         UIApplication.shared.open(URL(string:url)! as URL, options: [:], completionHandler: nil)
+      
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
 }

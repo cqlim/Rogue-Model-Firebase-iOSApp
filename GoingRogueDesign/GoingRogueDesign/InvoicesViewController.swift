@@ -88,6 +88,9 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
         let url = currInvoice.url
         
         UIApplication.shared.open(URL(string:url)! as URL, options: [:], completionHandler: nil)
+
+        tableView.deselectRow(at: indexPath, animated: true)
+        
     }
     
 }
