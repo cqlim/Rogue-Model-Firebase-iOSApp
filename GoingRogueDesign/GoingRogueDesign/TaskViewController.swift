@@ -69,13 +69,13 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
         return cell
        }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        performSegue(withIdentifier: "ShowMoreTask", sender: self)
-        print("here!!!")
-        tableView.deselectRow(at: indexPath, animated: true)
-    }
-    
+  
+    // Might need to redo the segue because this currently doesn't work
+//    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+//        performSegue(withIdentifier: "ShowMoreTask", sender: self)
+//        tableView.deselectRow(at: indexPath, animated: true)
+//    }
+//
     
     // Pass data through segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?){
