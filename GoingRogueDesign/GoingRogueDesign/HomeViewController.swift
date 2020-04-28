@@ -37,6 +37,12 @@ class HomeViewController: UIViewController {
         userTabBarValidation()
         
         super.viewDidLoad()
+//         let tabBarControllerItems = self.tabBarController?.tabBar.items
+//
+//          if let tabArray = tabBarControllerItems {
+//               tabBarItem1 = tabArray[1]
+//          }
+//          tabBarItem1!.isEnabled = false
     
         // Do any additional setup after loading the view.
         ListServicesButton.layer.cornerRadius = 15.0

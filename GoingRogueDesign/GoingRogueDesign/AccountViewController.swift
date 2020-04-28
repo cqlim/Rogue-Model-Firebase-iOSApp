@@ -26,10 +26,12 @@ class AccountViewController: UIViewController {
     
     @IBOutlet weak var EditContractorsButton: UIButton!
     
+    
     @IBOutlet weak var LogOutButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
 
         // Do any additional setup after loading the view.
         EditAccountButton.layer.cornerRadius = 15.0
@@ -60,13 +62,6 @@ class AccountViewController: UIViewController {
                     }
                 }
         }
-    }
-
-    @IBAction func LogOutButtonTapped(_ sender: Any) {
-        print("I am trying to log out!")
-        try! Auth.auth().signOut()
-        transitionToHome()
-          
     }
     
     func transitionToHome(){

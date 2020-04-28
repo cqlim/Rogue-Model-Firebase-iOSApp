@@ -16,9 +16,12 @@ class InvoicesCell: UITableViewCell {
     
     @IBOutlet weak var InvoiceTypeLabel: UILabel!
     
+    
+    @IBOutlet weak var InvoiceDueLabel: UILabel!
     func setInvoice(invoice: Invoice){
         
         InvoiceNameLabel.text = invoice.name
+        InvoiceDueLabel.text = invoice.dueDate
         InvoiceTypeLabel.text = invoice.type
     
     }
