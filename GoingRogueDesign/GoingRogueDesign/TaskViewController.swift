@@ -53,6 +53,25 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         }
     
     
+    @IBAction func selectButtonTapped(_ sender: UIButton) {
+        
+        UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear,
+                       animations: {
+                        sender.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+        }){ (success) in
+            sender.isSelected = !sender.isSelected
+            UIView.animate(withDuration: 0.5, delay: 0.1, options: .curveLinear, animations: {
+                sender.transform = .identity
+            }, completion: nil)
+        }
+                
+//        if sender.isSelected {
+//            sender.isSelected = false
+//        }
+//        else{
+//            sender.isSelected = true
+//        }
+    }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            return tasks.count
