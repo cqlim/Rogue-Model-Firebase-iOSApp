@@ -20,6 +20,6 @@ manage and navigate through their projects on their mobile devices.
 <h5>Steps</h5>
 
 1. Clone or download this repository onto your MacOs device
-2. Open this project on your XCode
+2. Open the "workspace" project on your XCode (this allows Firebase and other tools to be imported)
 3. Click the "run" button in the XCode IDE as it will automatically compiles the application and run the simulation when everything is ready
 
