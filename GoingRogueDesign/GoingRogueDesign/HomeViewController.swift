@@ -27,7 +27,6 @@ class HomeViewController: UIViewController {
     @IBOutlet weak var GRDURLButton: UIButton!
     
     @IBOutlet weak var LinkButton: UIButton!
-    @IBOutlet weak var logout: UIBarButtonItem!
     
     var tabBarItem1: UITabBarItem?
     var tabBarItem2: UITabBarItem?
@@ -37,6 +36,10 @@ class HomeViewController: UIViewController {
         userTabBarValidation()
         
         super.viewDidLoad()
+        if let tabBarController = self.tabBarController{
+            tabBarController.viewControllers?.remove(at: 1)
+        }
+        
     
         // Do any additional setup after loading the view.
         ListServicesButton.layer.cornerRadius = 15.0
@@ -84,6 +87,7 @@ class HomeViewController: UIViewController {
         else{
             tabBarItemsActivate(x: false)
         }
+        
     }
     
     @IBAction func FaceBookButtonTapped(_ sender: Any) {
@@ -111,4 +115,21 @@ class HomeViewController: UIViewController {
         UIApplication.shared.open(URL(string:"https://www.goingroguedesignllc.com")! as URL, options: [:], completionHandler: nil)
     }
     
+    
+    
+    @IBAction func SignInButtonTapped(_ sender: Any) {
+        let user = Auth.auth().currentUser
+               
+        if (user != nil){
+//            let viewController:UINavigationController = (UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "goAccount") as? UINavigationController)!
+
+            self.tabBarController!.selectedIndex = 2
+
+//            self.view.window?.rootViewController = viewController
+//            self.view.window?.makeKeyAndVisible()
+        }
+        else{
+           performSegue(withIdentifier: "showSignInScreen", sender: nil)
+        }
+    }
 }

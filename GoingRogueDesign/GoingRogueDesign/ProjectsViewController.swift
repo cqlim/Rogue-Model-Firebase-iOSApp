@@ -17,6 +17,7 @@ class ProjectsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+
         createProjectArray()
         tableView.delegate = self
         tableView.dataSource = self

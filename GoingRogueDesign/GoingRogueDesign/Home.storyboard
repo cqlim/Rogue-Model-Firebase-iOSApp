@@ -12,7 +12,7 @@
         <!--Home-->
         <scene sceneID="OPM-yh-Jgk">
             <objects>
-                <viewController id="UMc-dp-fHJ" customClass="HomeViewController" customModule="GoingRogueDesign" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="showSignInScreen" id="UMc-dp-fHJ" customClass="HomeViewController" customModule="GoingRogueDesign" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Jrm-qf-wH3">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="1100"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -38,7 +38,7 @@
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Welcome, Sign In"/>
                                                 <connections>
-                                                    <segue destination="PJ2-ol-CfY" kind="show" id="moW-1T-l66"/>
+                                                    <action selector="SignInButtonTapped:" destination="UMc-dp-fHJ" eventType="touchUpInside" id="ET8-Cb-vqL"/>
                                                 </connections>
                                             </button>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Going Rogue Design" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3PK-Oy-eSp">
@@ -229,11 +229,12 @@
                         <outlet property="RequestInfoButton" destination="zgd-Bz-cOC" id="Zus-Ns-nCZ"/>
                         <outlet property="SignInButton" destination="ItC-pt-Ok4" id="f8n-eQ-dQu"/>
                         <outlet property="TwitterButton" destination="09F-wa-nJY" id="a5k-rp-DOy"/>
+                        <segue destination="PJ2-ol-CfY" kind="show" identifier="showSignInScreen" id="3Ch-z2-Jya"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="v5Y-nQ-UDc" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3412" y="-307"/>
+            <point key="canvasLocation" x="3439" y="-291"/>
         </scene>
         <!--Req Info Submit View Controller-->
         <scene sceneID="tib-x8-urT">
