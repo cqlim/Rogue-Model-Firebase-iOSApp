@@ -64,10 +64,44 @@ class AccountViewController: UIViewController {
         }
     }
     
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if let vc = segue.destination as? EditAccountViewController{
+            vc.delegate = self
+        }
+        
+    }
+    
+    
+    @IBAction func LouOutButtonTapped(_ sender: Any) {
+        showLogoutAlert();
+    }
+    
+    func showLogoutAlert(){
+        let alert = UIAlertController(title: "Confirmation", message: "Are you sure you want to log out?", preferredStyle: .alert)
+        let yesOption = UIAlertAction(title: "Yes", style: .destructive) { _ in
+            try! Auth.auth().signOut()
+            self.transitionToHome()
+        }
+        let noOption = UIAlertAction(title: "No", style: .cancel, handler: nil)
+        alert.addAction(yesOption)
+        alert.addAction(noOption)
+        present(alert, animated: true, completion: nil)
+        
+    }
+    
     func transitionToHome(){
          let viewController:UITabBarController = (UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "HomeVC") as? UITabBarController)!
 
          self.view.window?.rootViewController = viewController
          self.view.window?.makeKeyAndVisible()
      }
+    
+}
+
+extension AccountViewController: EditAccountDelegate {
+    func reloadAccountInfo() {
+        print("Here")
+        viewDidLoad()
+    }
 }

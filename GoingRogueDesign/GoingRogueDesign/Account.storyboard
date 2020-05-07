@@ -64,7 +64,7 @@
                                             <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                         </state>
                                         <connections>
-                                            <segue destination="rQc-hR-Ip4" kind="presentation" id="hdZ-dv-1Xg"/>
+                                            <action selector="LouOutButtonTapped:" destination="eyv-vV-kGT" eventType="touchUpInside" id="P8y-y1-NpW"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -129,82 +129,6 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="BOG-we-1zy" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="3690" y="396"/>
-        </scene>
-        <!--Log Out View Controller-->
-        <scene sceneID="iah-V3-9TX">
-            <objects>
-                <viewController modalTransitionStyle="crossDissolve" modalPresentationStyle="overCurrentContext" id="rQc-hR-Ip4" customClass="LogOutViewController" customModule="GoingRogueDesign" customModuleProvider="target" sceneMemberID="viewController">
-                    <view key="view" contentMode="scaleToFill" id="aKO-JC-pOX">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VRw-bw-ioq">
-                                <rect key="frame" x="40" y="378" width="334" height="140"/>
-                                <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="Are you sure you want to log out？" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tfz-dM-ww7">
-                                        <rect key="frame" x="0.0" y="0.0" width="334" height="85"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
-                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="24"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                    </textView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="eec-h7-LW4">
-                                        <rect key="frame" x="0.0" y="85" width="334" height="55"/>
-                                        <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zq9-DY-PMn">
-                                                <rect key="frame" x="0.0" y="0.0" width="167" height="55"/>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <state key="normal" title="Yes"/>
-                                                <connections>
-                                                    <action selector="confirmTapped:" destination="rQc-hR-Ip4" eventType="touchUpInside" id="fZA-9q-oTO"/>
-                                                </connections>
-                                            </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UOP-02-I3j">
-                                                <rect key="frame" x="167" y="0.0" width="167" height="55"/>
-                                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
-                                                <state key="normal" title="No">
-                                                    <color key="titleColor" red="1" green="0.30793296850000001" blue="0.126897856" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="denyTapped:" destination="rQc-hR-Ip4" eventType="touchUpInside" id="Bfk-0L-ZND"/>
-                                                </connections>
-                                            </button>
-                                        </subviews>
-                                    </stackView>
-                                </subviews>
-                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                <constraints>
-                                    <constraint firstItem="Tfz-dM-ww7" firstAttribute="leading" secondItem="VRw-bw-ioq" secondAttribute="leading" id="Lvq-bV-PJs"/>
-                                    <constraint firstItem="eec-h7-LW4" firstAttribute="leading" secondItem="VRw-bw-ioq" secondAttribute="leading" id="M95-Dx-5O3"/>
-                                    <constraint firstAttribute="bottom" secondItem="eec-h7-LW4" secondAttribute="bottom" id="Rnf-uR-O7M"/>
-                                    <constraint firstAttribute="trailing" secondItem="Tfz-dM-ww7" secondAttribute="trailing" id="TTj-5T-cUG"/>
-                                    <constraint firstAttribute="height" constant="140" id="WFJ-aJ-X71"/>
-                                    <constraint firstAttribute="bottom" secondItem="Tfz-dM-ww7" secondAttribute="bottom" constant="55" id="lPC-K2-DdZ"/>
-                                    <constraint firstItem="eec-h7-LW4" firstAttribute="top" secondItem="Tfz-dM-ww7" secondAttribute="bottom" id="r0w-bv-jVm"/>
-                                    <constraint firstItem="Tfz-dM-ww7" firstAttribute="top" secondItem="VRw-bw-ioq" secondAttribute="top" id="vWm-dO-KA1"/>
-                                    <constraint firstAttribute="trailing" secondItem="eec-h7-LW4" secondAttribute="trailing" id="y0q-cw-Pjf"/>
-                                </constraints>
-                            </view>
-                        </subviews>
-                        <color key="backgroundColor" white="1" alpha="0.75" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                        <constraints>
-                            <constraint firstItem="VRw-bw-ioq" firstAttribute="leading" secondItem="Et5-gD-hC9" secondAttribute="leading" constant="40" id="06v-G9-HNh"/>
-                            <constraint firstItem="VRw-bw-ioq" firstAttribute="centerY" secondItem="aKO-JC-pOX" secondAttribute="centerY" id="P6r-LP-5R7"/>
-                            <constraint firstItem="VRw-bw-ioq" firstAttribute="centerX" secondItem="aKO-JC-pOX" secondAttribute="centerX" id="duw-g1-TjM"/>
-                            <constraint firstItem="Et5-gD-hC9" firstAttribute="trailing" secondItem="VRw-bw-ioq" secondAttribute="trailing" constant="40" id="uXd-gz-lox"/>
-                        </constraints>
-                        <viewLayoutGuide key="safeArea" id="Et5-gD-hC9"/>
-                    </view>
-                    <navigationItem key="navigationItem" id="mAz-Uk-WOX"/>
-                    <connections>
-                        <outlet property="confirmButton" destination="zq9-DY-PMn" id="Yja-D3-CSl"/>
-                        <outlet property="denyButton" destination="UOP-02-I3j" id="K1C-FH-bYn"/>
-                        <outlet property="popUpView" destination="VRw-bw-ioq" id="YZL-Nd-2MZ"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="xkZ-VG-tGI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3690" y="1175"/>
         </scene>
         <!--Edit Contractors View Controller-->
         <scene sceneID="Zzv-rU-2gb">

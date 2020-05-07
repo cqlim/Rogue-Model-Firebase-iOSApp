@@ -10,7 +10,13 @@ import UIKit
 import FirebaseAuth
 import Firebase
 
+protocol EditAccountDelegate{
+    func reloadAccountInfo()
+}
+
 class EditAccountViewController: UIViewController, UITextFieldDelegate {
+    
+    var delegate: EditAccountDelegate?
 
     @IBOutlet weak var firstNameTextField: UITextField!
     
@@ -87,6 +93,10 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
                     self.errorLabel.textColor = UIColor(red:0.28, green:0.60, blue:0.94, alpha: 1)
                     self.errorLabel.text = "All the changes have been saved."
                     self.errorLabel.alpha = 1
+                    if let delegate = self.delegate {
+                        print("In EditAccount")
+                        delegate.reloadAccountInfo()
+                    }
                 }
             }
             

@@ -305,50 +305,5 @@ extension EditContractorsViewController: contractorInfoDelegate{
         viewDidLoad()
     }
         // Go to the firestore and check if the current user has any contractor
-        
-        
-        
-        // If the current user has contractors:
-
-            // 1. Create an array and store the current user's contractors
-        
-        
-            // 2. Build and configure the vertical stack view
-        
-        
-            // 3. Show the vertical stack view
-        
-            
-            // 4. Build and configure the buttons and put them into the stack view that I just created
-                // Set these button's title by the contractor's first name + last name
-            
-        
-            // 5. Add the feature that when any of these contractor's button get clicked
-                // (1) Save the data of the current contractor
-        
-                // (2) Pass this contractor's data to a new view controller which displays the contractor's information
-        
-        
-            // 6. Add a "+" button under the last contractor's button outside of the stack view
-        
-            
-            // 7. Add the feature that when the "+" button get clicked:
-                // (1) Create a new button and set title to "New Contractor"
-        
-                // (2) Create a new constractor's document in the firestore and set data to empty
-        
-                // (3) Put the new button into the stack view under the current last contractor
-        
-        
-        // If the current user doesn't has contractors:
-        
-            // 1. Build, configure the label
-                //Set the label's color to "UIColor(red:0.28, green:0.60, blue:0.94, alpha: 1)"
-        
-                //Set the label's text to "Sorry, looks like you don't have any contractors yet."
-        
-           
-            // 2. Show the Label
-        
 
 }

@@ -15,7 +15,6 @@
 		385F486223E3864A00035854 /* ReqInfoSubmitViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */; };
 		386D6F9D24327F1C003BD375 /* InvoicesCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6F9C24327F1C003BD375 /* InvoicesCell.swift */; };
 		386D6F9F243281E8003BD375 /* Invoice.swift in Sources */ = {isa = PBXBuildFile; fileRef = 386D6F9E243281E8003BD375 /* Invoice.swift */; };
-		38791053245808FD007DB2E1 /* LogOutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38791052245808FC007DB2E1 /* LogOutViewController.swift */; };
 		388E7F6723F53D14003E533B /* EditContractorsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 388E7F6623F53D14003E533B /* EditContractorsViewController.swift */; };
 		38A83DDC23DA787300B2FB8C /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A83DDB23DA787300B2FB8C /* HomeViewController.swift */; };
 		38A83DDE23DA788F00B2FB8C /* CalculatorViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38A83DDD23DA788F00B2FB8C /* CalculatorViewController.swift */; };
@@ -59,7 +58,6 @@
 		385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReqInfoSubmitViewController.swift; sourceTree = "<group>"; };
 		386D6F9C24327F1C003BD375 /* InvoicesCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InvoicesCell.swift; sourceTree = "<group>"; };
 		386D6F9E243281E8003BD375 /* Invoice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Invoice.swift; sourceTree = "<group>"; };
-		38791052245808FC007DB2E1 /* LogOutViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LogOutViewController.swift; sourceTree = "<group>"; };
 		388E7F6623F53D14003E533B /* EditContractorsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditContractorsViewController.swift; sourceTree = "<group>"; };
 		38A83DDB23DA787300B2FB8C /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
 		38A83DDD23DA788F00B2FB8C /* CalculatorViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculatorViewController.swift; sourceTree = "<group>"; };
@@ -122,7 +120,6 @@
 				382344842430382D0036E060 /* InvoicesViewController.swift */,
 				386D6F9C24327F1C003BD375 /* InvoicesCell.swift */,
 				38A83DE123DA78B000B2FB8C /* AccountViewController.swift */,
-				38791052245808FC007DB2E1 /* LogOutViewController.swift */,
 				385F486123E3864A00035854 /* ReqInfoSubmitViewController.swift */,
 				38B66F8A23F38D15008F3F40 /* EditAccountViewController.swift */,
 				388E7F6623F53D14003E533B /* EditContractorsViewController.swift */,
@@ -352,7 +349,6 @@
 				52D7894F23D1A2D3001922CE /* ViewController.swift in Sources */,
 				38B9709B23E0D452000B89D5 /* LoginViewController.swift in Sources */,
 				528DF0B32431887500D96820 /* HelperFunctions.swift in Sources */,
-				38791053245808FD007DB2E1 /* LogOutViewController.swift in Sources */,
 				388E7F6723F53D14003E533B /* EditContractorsViewController.swift in Sources */,
 				382344852430382D0036E060 /* InvoicesViewController.swift in Sources */,
 				38162E3E23F8E3BB008C698C /* ShowContractorInfoViewController.swift in Sources */,
