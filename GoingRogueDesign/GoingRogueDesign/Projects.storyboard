@@ -352,6 +352,7 @@
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
+                                            <outlet property="resolvedButton" destination="fNV-NA-g3B" id="Tx2-b4-TyF"/>
                                             <outlet property="taskDueDate" destination="uR4-dc-b3a" id="838-LX-qps"/>
                                             <outlet property="taskName" destination="T3h-rU-iT5" id="DIk-Up-cON"/>
                                             <segue destination="FmY-In-HM0" kind="show" identifier="ShowMoreTask" id="LhS-bi-e6J"/>
@@ -390,7 +391,6 @@
                     </view>
                     <navigationItem key="navigationItem" id="78S-2z-eQP"/>
                     <connections>
-                        <outlet property="resolvedButton" destination="fNV-NA-g3B" id="HcR-kt-vAP"/>
                         <outlet property="taskTableView" destination="uvP-lT-CmG" id="YJZ-qM-Cqj"/>
                     </connections>
                 </viewController>

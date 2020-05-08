@@ -16,7 +16,6 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     var tasks: [Task] = []
     var project: Project!
     var selectedtasks : Task!
-    @IBOutlet weak var resolvedButton: UIButton!
     
     
     
@@ -25,7 +24,8 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         navigationItem.title = project.title
         createTaskArray()
     }
-    
+  
+    // retrieve data from the firebase and store as a task array
      func createTaskArray(){
             let db = Firestore.firestore().collection("Task")
             let projectID = project.id
@@ -63,6 +63,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
             }
         }
     
+
     
     @IBAction func resolvedButtonTapped(_ sender: UIButton) {
         
@@ -89,7 +90,8 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskViewCell
         
-               
+        cell.resolvedButtonStatus(status: task.taskStatus)
+        
         cell.setTask(task: task)
         
         return cell

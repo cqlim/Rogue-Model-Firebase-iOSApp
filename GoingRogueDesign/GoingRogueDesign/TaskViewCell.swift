@@ -12,10 +12,22 @@ class TaskViewCell: UITableViewCell {
 
     @IBOutlet weak var taskName: UILabel!
     @IBOutlet weak var taskDueDate: UILabel!
+    @IBOutlet weak var resolvedButton: UIButton!
     
     func setTask(task: Task){
         
         taskName.text = task.taskname
         taskDueDate.text = task.taskdueDate
     }
+    
+    // Sets the resolve button's state when launch the task view
+    func resolvedButtonStatus(status: String){
+        if(status == "completed"){
+            resolvedButton.isSelected = true
+        }
+        else{
+            resolvedButton.isSelected = false
+        }
+    }
+    
 }
