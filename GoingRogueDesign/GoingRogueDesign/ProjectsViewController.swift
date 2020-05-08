@@ -37,7 +37,7 @@ class ProjectsViewController: UIViewController {
                     if (documentEmail == document.get("customerEmail") as? String){
                         
                         let timeStamp = document.get("projectStartDate") as! Timestamp
-                        let dateString = dateConvertToString(date: timeStamp.dateValue())
+                        let dateString = dateToStringConverter(date: timeStamp.dateValue(), time: true)
                        
                         let _Project = Project(title: document.get("projectName") as? String ?? "N/A", address: document.get("projectAddress") as? String ?? "N/A", status: document.get("projectType") as? String ?? "N/A", startDate: dateString, description: document.get("projectDescription") as? String ?? "N/A", id: document.get("projectID") as? String ?? "N/A", longitude: document.get("projectLongitude") as? Float64 ?? 0.0, latitude: document.get("projectLatitude") as? Float64 ?? 0.0, manager: document.get("managerName") as? String ?? "N/A", mainContractor: document.get("projectMainContractorName") as? String ?? "N/A")
                         

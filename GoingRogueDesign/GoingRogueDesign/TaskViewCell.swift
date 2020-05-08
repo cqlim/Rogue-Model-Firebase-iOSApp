@@ -11,11 +11,11 @@ import UIKit
 class TaskViewCell: UITableViewCell {
 
     @IBOutlet weak var taskName: UILabel!
-    @IBOutlet weak var taskType: UILabel!
+    @IBOutlet weak var taskDueDate: UILabel!
     
     func setTask(task: Task){
         
         taskName.text = task.taskname
-        taskType.text = task.tasktype
+        taskDueDate.text = task.taskdueDate
     }
 }

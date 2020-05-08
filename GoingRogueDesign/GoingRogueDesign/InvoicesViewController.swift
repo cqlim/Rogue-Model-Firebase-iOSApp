@@ -40,7 +40,7 @@ class InvoicesViewController: UIViewController {
                     for currentInvoice in querySnapshot!.documents {
                         print("Project name： \(currentInvoice.get("invoiceName"))")
                         let uploadDateTimeStamp = currentInvoice.get("invoiceDueDate") as! Timestamp
-                        let uploadDateString = self.dateConvertToString(date: uploadDateTimeStamp.dateValue())
+                        let uploadDateString = dateToStringConverter(date: uploadDateTimeStamp.dateValue(), time:false)
                         
                         
                         
@@ -53,16 +53,6 @@ class InvoicesViewController: UIViewController {
                     self.tableview.reloadData()
                 }
         }
-    }
-    
-    
-    // Takes the time stamp and convert to date
-    func dateConvertToString(date: Date) -> String{
-        let df = DateFormatter()
-        df.amSymbol = "AM"
-        df.pmSymbol = "PM"
-        df.dateFormat = "yyyy-MM-dd' at 'hh:mm a"
-        return df.string(from: date)
     }
 
 

@@ -45,6 +45,7 @@ class ProjectDetailViewController: UIViewController {
         ProjectAddress.addGestureRecognizer(addressTap)
     }
     
+    // Making sure the labels and their values are distinguishable
     func labelInit(){
         ProjectTitle.text = project.title
         ProjectAddress.text = project.address

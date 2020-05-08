@@ -13,9 +13,10 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     
     
     @IBOutlet weak var taskTableView: UITableView!
-     var tasks: [Task] = []
-     var project: Project!
+    var tasks: [Task] = []
+    var project: Project!
     var selectedtasks : Task!
+    @IBOutlet weak var resolvedButton: UIButton!
     
     
     
@@ -37,12 +38,22 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                     for document in QuerySnapshot!.documents{
                         if (projectID == document.get("projectID") as? String){
                             
-                            let taskduedate = document.get("taskDueDate") as! Timestamp
+                            let taskDueDate = document.get("taskDueDate") as! Timestamp
                             
-                            let stringTaskDueDate = dateConvertToString(date: taskduedate.dateValue())
+                            let stringTaskDueDate = dateToStringConverter(date: taskDueDate.dateValue(), time: false)
+                            
+                            let taskResolvedDate = document.get("taskResolvedDate") as? Timestamp ?? nil
+                            var stringResolvedDate: String
+                            
+                            if(taskResolvedDate == nil){
+                                stringResolvedDate = "N/A"
+                            }
+                            else{
+                                stringResolvedDate = dateToStringConverter(date: taskResolvedDate!.dateValue(), time: false)
+                            }
                             
                             
-                            let _Task = Task(name: document.get("taskName") as? String ?? "N/A", type: document.get("taskType") as? String ?? "N/A",  dueDate: stringTaskDueDate, description: document.get("taskDescription") as? String ?? "N/A")
+                            let _Task = Task(name: document.get("taskName") as? String ?? "N/A", status: document.get("taskType") as? String ?? "N/A",  dueDate: stringTaskDueDate, description: document.get("taskDescription") as? String ?? "N/A", resolvedDate: stringResolvedDate)
                             
                             self.tasks.append(_Task)
                         }
@@ -53,7 +64,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         }
     
     
-    @IBAction func selectButtonTapped(_ sender: UIButton) {
+    @IBAction func resolvedButtonTapped(_ sender: UIButton) {
         
         UIView.animate(withDuration: 0, delay: 0, options: .curveLinear,
                        animations: {
@@ -65,12 +76,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
             }, completion: nil)
         }
                 
-//        if sender.isSelected {
-//            sender.isSelected = false
-//        }
-//        else{
-//            sender.isSelected = true
-//        }
+
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
