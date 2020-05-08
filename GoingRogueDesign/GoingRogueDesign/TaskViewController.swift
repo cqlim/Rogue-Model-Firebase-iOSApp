@@ -18,7 +18,6 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     var selectedtasks : Task!
     
     
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         navigationItem.title = project.title
@@ -49,11 +48,11 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                                 stringResolvedDate = "N/A"
                             }
                             else{
-                                stringResolvedDate = dateToStringConverter(date: taskResolvedDate!.dateValue(), time: false)
+                                stringResolvedDate = dateToStringConverter(date: taskResolvedDate!.dateValue(), time: true)
                             }
                             
                             
-                            let _Task = Task(name: document.get("taskName") as? String ?? "N/A", status: document.get("taskType") as? String ?? "N/A",  dueDate: stringTaskDueDate, description: document.get("taskDescription") as? String ?? "N/A", resolvedDate: stringResolvedDate)
+                            let _Task = Task(name: document.get("taskName") as? String ?? "N/A", status: document.get("taskType") as? String ?? "N/A",  dueDate: stringTaskDueDate, description: document.get("taskDescription") as? String ?? "N/A", resolvedDate: stringResolvedDate, id: document.get("taskID") as? String ?? "N/A")
                             
                             self.tasks.append(_Task)
                         }
@@ -66,17 +65,34 @@ class TaskViewController: UIViewController, UITableViewDataSource {
 
     
     @IBAction func resolvedButtonTapped(_ sender: UIButton) {
+//        UIView.animate(withDuration: 0, delay: 0, options: .curveLinear,
+//                       animations: {
+//                        sender.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
+//        }){ (success) in
+//            sender.isSelected = !sender.isSelected
+//            UIView.animate(withDuration: 0, delay: 0, options: .curveLinear, animations: {
+//                sender.transform = .identity
+//            }, completion: nil)
+//        }
         
-        UIView.animate(withDuration: 0, delay: 0, options: .curveLinear,
-                       animations: {
-                        sender.transform = CGAffineTransform(scaleX: 0.3, y: 0.3)
-        }){ (success) in
-            sender.isSelected = !sender.isSelected
-            UIView.animate(withDuration: 0, delay: 0, options: .curveLinear, animations: {
-                sender.transform = .identity
-            }, completion: nil)
+        sender.isSelected = !sender.isSelected
+        
+        guard let cell = sender.superview?.superview as? TaskViewCell else{
+            print("Error in retrieving the indexPath from resolvedButtonTapped()")
+            return
         }
-                
+         
+        let indexPath = taskTableView.indexPath(for: cell)
+        let task = tasks[indexPath!.row]
+        let db = Firestore.firestore()
+        
+        if(sender.isSelected){
+            db.collection("Task").document(task.taskID).setData(["taskType":"completed"], merge: true)
+        }
+        else{
+
+            db.collection("Task").document(task.taskID).setData(["taskType":"ongoing"], merge: true)
+        }
 
     }
     

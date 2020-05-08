@@ -14,14 +14,16 @@ class Task {
     var taskdueDate: String
     var taskdescription: String
     var taskResolvedDate: String
+    var taskID: String
     
 
-    init(name: String, status: String, dueDate: String, description: String, resolvedDate: String) {
+    init(name: String, status: String, dueDate: String, description: String, resolvedDate: String, id: String) {
         self.taskname = name
         self.taskStatus = status
         self.taskdueDate = dueDate
         self.taskdescription = description
         self.taskResolvedDate = resolvedDate
+        self.taskID = id
     }
 
 }
