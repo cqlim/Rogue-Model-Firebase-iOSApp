@@ -16,7 +16,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     var tasks: [Task] = []
     var project: Project!
     var selectedtasks : Task!
-    
+    var taskDueDateAttributedString = NSAttributedString()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -109,8 +109,8 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         cell.resolvedButtonStatus(status: task.taskStatus)
         
         // Retrieving the red or black due date string
-        let dueDate = cell.checkOverdue(task: task)
-        cell.setTask(task: task, dueDate: dueDate)
+        taskDueDateAttributedString = cell.checkOverdue(task: task)
+        cell.setTask(task: task, dueDate: taskDueDateAttributedString)
         
         return cell
        }
@@ -145,6 +145,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                 if let vc = segue.destination as? MoreTaskViewController{
                     let row = self.taskTableView.indexPathForSelectedRow!.row
                     vc.tasks = tasks[row]
+                    vc.taskDueDateAttributedString = taskDueDateAttributedString
                 }
             }
     }
