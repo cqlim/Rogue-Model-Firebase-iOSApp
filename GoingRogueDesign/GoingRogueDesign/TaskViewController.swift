@@ -112,6 +112,23 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
         return cell
        }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let db = Firestore.firestore()
+            let task = tasks[indexPath.row]
+            // handle delete (by removing the data from your array and updating the tableview)
+            taskTableView.beginUpdates()
+            tasks.remove(at: indexPath.row)
+            taskTableView.deleteRows(at: [indexPath], with: .fade)
+            db.collection("Task").document(task.taskID).delete()
+            taskTableView.endUpdates()
+        }
+    }
   
     // Might need to redo the segue because this currently doesn't work
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
