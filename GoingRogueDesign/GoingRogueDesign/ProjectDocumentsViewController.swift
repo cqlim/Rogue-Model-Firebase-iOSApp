@@ -16,15 +16,32 @@ class ProjectDocumentsViewController: UIViewController {
     var project: Project!
     var documents: [Document] = []
 
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        DocumentTableView.refreshControl = myRefreshControl
+        
         navigationItem.title = project.title
         createDocumentArray()
         DocumentTableView.delegate = self
         DocumentTableView.dataSource = self
         DocumentTableView.translatesAutoresizingMaskIntoConstraints = true
         
+    }
+    
+    // Pull down to refresh the data
+    @objc func refresh(sender: UIRefreshControl){
+        self.documents.removeAll()
+        createDocumentArray()
+
+        DocumentTableView.refreshControl?.endRefreshing()
     }
     
     //Go through the list of documents based on "projectID"

@@ -16,14 +16,32 @@ class InvoicesViewController: UIViewController {
     var project: Project!
     var invoices: [Invoice] = []
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableview.refreshControl = myRefreshControl
+
+        
         navigationItem.title = project.title
         createArray()
         
         tableview.dataSource = self
         tableview.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    // Pull down to refresh the data
+    @objc func refresh(sender: UIRefreshControl){
+        self.invoices.removeAll()
+        createArray()
+
+        tableview.refreshControl?.endRefreshing()
     }
     
     func createArray(){

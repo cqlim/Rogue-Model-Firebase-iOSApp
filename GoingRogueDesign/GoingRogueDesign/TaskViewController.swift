@@ -17,13 +17,30 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     var project: Project!
     var selectedtasks : Task!
     var taskDueDateAttributedString = NSAttributedString()
+
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        taskTableView.refreshControl = myRefreshControl
+        
         navigationItem.title = project.title
         createTaskArray()
     }
   
+    // Pull down to refresh the data
+    @objc func refresh(sender: UIRefreshControl){
+        self.tasks.removeAll()
+        createTaskArray()
+
+        taskTableView.refreshControl?.endRefreshing()
+    }
+    
     // retrieve data from the firebase and store as a task array
      func createTaskArray(){
             let db = Firestore.firestore().collection("Task")

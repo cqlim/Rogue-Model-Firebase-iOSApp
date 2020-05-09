@@ -15,12 +15,29 @@ class ProjectsViewController: UIViewController {
     
     var projects: [Project] = []
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.refreshControl = myRefreshControl
 
         createProjectArray()
         tableView.delegate = self
         tableView.dataSource = self
+
+    }
+    
+    // Pull down to refresh the data
+    @objc func refresh(sender: UIRefreshControl){
+        self.projects.removeAll()
+        createProjectArray()
+
+        tableView.refreshControl?.endRefreshing()
     }
 
     // Go through the list of projects from the DB and retrieve projects based on "customerEmail"
