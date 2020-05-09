@@ -44,10 +44,10 @@ class InvoicesViewController: UIViewController {
                         
                         
                         
-                        let invoice = Invoice(dueDate: uploadDateString, url: currentInvoice.get("invoiceLink") as? String ?? "N/A", name: currentInvoice.get("invoiceName") as? String ?? "N/A", type: (currentInvoice.get("invoiceType") as? String)!, projectID: currentInvoice.get("projectID") as? String ?? "N/A")
+                        let invoice = Invoice(dueDate: uploadDateString, url: currentInvoice.get("invoiceLink") as? String ?? "N/A", name: currentInvoice.get("invoiceName") as? String ?? "N/A", paid: (currentInvoice.get("invoiceType") as? String)!, projectID: currentInvoice.get("projectID") as? String ?? "N/A", invoiceID: currentInvoice.get("invoiceID") as? String ?? "N/A", dueDateForChecking: uploadDateTimeStamp.dateValue())
+                        
                         
                         self.invoices.append(invoice)
-                        print("Project Name: \(invoice.name)")
                     }
                         
                     self.tableview.reloadData()
@@ -55,7 +55,27 @@ class InvoicesViewController: UIViewController {
         }
     }
 
+    @IBAction func paidButtonTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        
+        guard let cell = sender.superview?.superview as? InvoicesCell else{
+            print("Error in retrieving the indexPath from paidButtonTapped()")
+            return
+        }
+         
+        let indexPath = tableview.indexPath(for: cell)
+        let invoice = invoices[indexPath!.row]
+        let db = Firestore.firestore()
+        
+        if(sender.isSelected){
+            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"paid"], merge: true)
+        }
+        else{
 
+            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"unpaid"], merge: true)
+        }
+    }
+    
 }
 
 extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
@@ -68,7 +88,9 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceCell") as! InvoicesCell
         
-        cell.setInvoice(invoice: currInvoice)
+        cell.paidButtonStatus(status: currInvoice.paid)
+        let dueDate = cell.checkOverdue(invoice: currInvoice)
+        cell.setInvoice(invoice: currInvoice,dueDate: dueDate)
         
         return cell
     }
@@ -81,6 +103,23 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
 
         tableView.deselectRow(at: indexPath, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let db = Firestore.firestore()
+            let invoice = invoices[indexPath.row]
+            // handle delete (by removing the data from your array and updating the tableview)
+            tableview.beginUpdates()
+            invoices.remove(at: indexPath.row)
+            tableview.deleteRows(at: [indexPath], with: .fade)
+            db.collection("Invoice").document(invoice.invoiceID).delete()
+            tableview.endUpdates()
+        }
     }
     
 }
