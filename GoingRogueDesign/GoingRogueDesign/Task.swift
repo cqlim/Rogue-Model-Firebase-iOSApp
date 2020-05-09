@@ -9,21 +9,23 @@
 import Foundation
 
 class Task {
-    var taskname: String
+    var taskName: String
     var taskStatus: String
-    var taskdueDate: String
-    var taskdescription: String
+    var taskDueDate: String
+    var taskDescription: String
     var taskResolvedDate: String
     var taskID: String
+    var taskOverdue: Date
     
 
-    init(name: String, status: String, dueDate: String, description: String, resolvedDate: String, id: String) {
-        self.taskname = name
+    init(name: String, status: String, dueDate: String, description: String, resolvedDate: String, id: String, overdue: Date) {
+        self.taskName = name
         self.taskStatus = status
-        self.taskdueDate = dueDate
-        self.taskdescription = description
+        self.taskDueDate = dueDate
+        self.taskDescription = description
         self.taskResolvedDate = resolvedDate
         self.taskID = id
+        self.taskOverdue = overdue
     }
 
 }

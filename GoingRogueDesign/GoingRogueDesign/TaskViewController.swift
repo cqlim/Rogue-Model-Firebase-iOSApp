@@ -52,7 +52,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                             }
                             
                             
-                            let _Task = Task(name: document.get("taskName") as? String ?? "N/A", status: document.get("taskType") as? String ?? "N/A",  dueDate: stringTaskDueDate, description: document.get("taskDescription") as? String ?? "N/A", resolvedDate: stringResolvedDate, id: document.get("taskID") as? String ?? "N/A")
+                            let _Task = Task(name: document.get("taskName") as? String ?? "N/A", status: document.get("taskType") as? String ?? "N/A",  dueDate: stringTaskDueDate, description: document.get("taskDescription") as? String ?? "N/A", resolvedDate: stringResolvedDate, id: document.get("taskID") as? String ?? "N/A", overdue: taskDueDate.dateValue())
                             
                             self.tasks.append(_Task)
                         }
@@ -108,7 +108,9 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
         cell.resolvedButtonStatus(status: task.taskStatus)
         
-        cell.setTask(task: task)
+        // Retrieving the red or black due date string
+        let dueDate = cell.checkOverdue(task: task)
+        cell.setTask(task: task, dueDate: dueDate)
         
         return cell
        }

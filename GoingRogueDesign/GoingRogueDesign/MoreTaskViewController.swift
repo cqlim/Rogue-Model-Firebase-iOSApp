@@ -26,11 +26,11 @@ class MoreTaskViewController: UIViewController {
     
     
     func labelInit(){
-        TaskDueDate.attributedText = attributedText(withString: "Due Date: \(tasks.taskdueDate)", boldString: "Due Date:", font: TaskDueDate.font)
+        TaskDueDate.attributedText = attributedText(withString: "Due Date: \(tasks.taskDueDate)", boldString: "Due Date:", font: TaskDueDate.font)
         TaskStatus.attributedText = attributedText(withString: "Status: \(tasks.taskStatus)", boldString: "Status:", font: TaskStatus.font)
-        TaskDescription.attributedText = attributedText(withString: "Description: \(tasks.taskdescription)", boldString: "Description", font: TaskDescription.font)
+        TaskDescription.attributedText = attributedText(withString: "Description: \(tasks.taskDescription)", boldString: "Description", font: TaskDescription.font)
         
-        TaskName.attributedText = attributedText(withString: "Name: \(tasks.taskname)", boldString: "Name:", font: TaskName.font)
+        TaskName.attributedText = attributedText(withString: "Name: \(tasks.taskName)", boldString: "Name:", font: TaskName.font)
         
         TaskResolvedDate.attributedText = attributedText(withString: "Resolved Date: \(tasks.taskResolvedDate)", boldString: "Resolved Date:", font: TaskResolvedDate.font)
     }
