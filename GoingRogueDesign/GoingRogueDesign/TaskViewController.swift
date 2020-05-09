@@ -39,7 +39,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                             
                             let taskDueDate = document.get("taskDueDate") as! Timestamp
                             
-                            let stringTaskDueDate = dateToStringConverter(date: taskDueDate.dateValue(), time: false)
+                            let stringTaskDueDate = dateToStringConverter(date: taskDueDate.dateValue(), time: true)
                             
                             let taskResolvedDate = document.get("taskResolvedDate") as? Timestamp ?? nil
                             var stringResolvedDate: String

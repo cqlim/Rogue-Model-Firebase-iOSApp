@@ -17,7 +17,13 @@ class TaskViewCell: UITableViewCell {
     func setTask(task: Task){
         
         taskName.text = task.taskname
-        taskDueDate.text = task.taskdueDate
+        
+        // remove the time when displaying the due date in the task list view
+        var str = task.taskdueDate
+        if let dueDateRange = task.taskdueDate.range(of: " at"){
+            str.removeSubrange(dueDateRange.lowerBound..<str.endIndex)
+        }
+        taskDueDate.text = str
     }
     
     // Sets the resolve button's state when launch the task view
