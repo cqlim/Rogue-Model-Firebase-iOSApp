@@ -16,10 +16,11 @@ class Invoice{
     var projectID: String
     var invoiceID: String
     var dueDateForChecking: Date
+    var paidDate: String
     
 //    var date = Date()
     
-    init(dueDate: String, url: String, name: String, paid: String, projectID: String, invoiceID: String, dueDateForChecking: Date) {
+    init(dueDate: String, url: String, name: String, paid: String, projectID: String, invoiceID: String, dueDateForChecking: Date, paidDate: String) {
         self.dueDate = dueDate
         self.url = url
         self.name = name
@@ -27,5 +28,6 @@ class Invoice{
         self.projectID = projectID
         self.invoiceID = invoiceID
         self.dueDateForChecking = dueDateForChecking
+        self.paidDate = paidDate
     }
 }

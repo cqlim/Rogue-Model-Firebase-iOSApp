@@ -60,9 +60,17 @@ class InvoicesViewController: UIViewController {
                         let uploadDateTimeStamp = currentInvoice.get("invoiceDueDate") as! Timestamp
                         let uploadDateString = dateToStringConverter(date: uploadDateTimeStamp.dateValue(), time:false)
                         
+                        let invoicePaidDate = currentInvoice.get("invoicePaidDate") as? Timestamp ?? nil
+                        var stringPaidDate: String
                         
+                        if(invoicePaidDate == nil){
+                            stringPaidDate = "N/A"
+                        }
+                        else{
+                            stringPaidDate = dateToStringConverter(date: invoicePaidDate!.dateValue(), time: true)
+                        }
                         
-                        let invoice = Invoice(dueDate: uploadDateString, url: currentInvoice.get("invoiceLink") as? String ?? "N/A", name: currentInvoice.get("invoiceName") as? String ?? "N/A", paid: (currentInvoice.get("invoiceType") as? String)!, projectID: currentInvoice.get("projectID") as? String ?? "N/A", invoiceID: currentInvoice.get("invoiceID") as? String ?? "N/A", dueDateForChecking: uploadDateTimeStamp.dateValue())
+                        let invoice = Invoice(dueDate: uploadDateString, url: currentInvoice.get("invoiceLink") as? String ?? "N/A", name: currentInvoice.get("invoiceName") as? String ?? "N/A", paid: (currentInvoice.get("invoiceType") as? String)!, projectID: currentInvoice.get("projectID") as? String ?? "N/A", invoiceID: currentInvoice.get("invoiceID") as? String ?? "N/A", dueDateForChecking: uploadDateTimeStamp.dateValue(), paidDate: stringPaidDate)
                         
                         
                         self.invoices.append(invoice)
@@ -84,13 +92,14 @@ class InvoicesViewController: UIViewController {
         let indexPath = tableview.indexPath(for: cell)
         let invoice = invoices[indexPath!.row]
         let db = Firestore.firestore()
+        let currentTime = Date()
         
         if(sender.isSelected){
-            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"paid"], merge: true)
+            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"paid","invoicePaidDate":currentTime], merge: true)
         }
         else{
 
-            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"unpaid"], merge: true)
+            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"unpaid","invoicePaidDate":""], merge: true)
         }
     }
     
