@@ -102,13 +102,14 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         let indexPath = taskTableView.indexPath(for: cell)
         let task = tasks[indexPath!.row]
         let db = Firestore.firestore()
+        let currentTime = Date()
         
         if(sender.isSelected){
-            db.collection("Task").document(task.taskID).setData(["taskType":"completed"], merge: true)
+            db.collection("Task").document(task.taskID).setData(["taskType":"completed", "taskResolvedDate":currentTime], merge: true)
         }
         else{
 
-            db.collection("Task").document(task.taskID).setData(["taskType":"ongoing"], merge: true)
+            db.collection("Task").document(task.taskID).setData(["taskType":"ongoing","taskResolvedDate":""], merge: true)
         }
 
     }
