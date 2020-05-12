@@ -163,7 +163,6 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                 if let vc = segue.destination as? MoreTaskViewController{
                     let row = self.taskTableView.indexPathForSelectedRow!.row
                     vc.tasks = tasks[row]
-                    vc.taskDueDateAttributedString = taskDueDateAttributedString
                 }
             }
     }

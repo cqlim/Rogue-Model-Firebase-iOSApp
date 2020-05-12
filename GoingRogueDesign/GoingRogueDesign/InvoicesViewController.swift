@@ -26,7 +26,9 @@ class InvoicesViewController: UIViewController {
         super.viewDidLoad()
         
         tableview.refreshControl = myRefreshControl
-
+        
+        // table height with the PaidDate label included
+        tableview.rowHeight = 61
         
         navigationItem.title = project.title
         createArray()
@@ -122,22 +124,24 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
         return cell
     }
     
-    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        var height: CGFloat = CGFloat()
-        let currInvoice = invoices[indexPath.row]
-        if(currInvoice.paid == "paid"){
-            // Height after adding the invoicePaidDate label
-            height = 61
-
-        }
-        else{
-            // Same height as the task table's height
-            height = 44
-        }
-        
-        return height
-    }
     
+    // This function is for only to increase the height for a certain row
+//    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+//        var height: CGFloat = CGFloat()
+//        let currInvoice = invoices[indexPath.row]
+//        if(currInvoice.paid == "paid"){
+//            // Height after adding the invoicePaidDate label
+//            height = 61
+//
+//        }
+//        else{
+//            // Same height as the task table's height
+//            height = 44
+//        }
+//
+//        return height
+//    }
+//
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currInvoice = invoices[indexPath.row]
