@@ -45,6 +45,7 @@ class ProjectDetailViewController: UIViewController {
         ProjectAddress.addGestureRecognizer(addressTap)
     }
     
+    // Making sure the labels and their values are distinguishable
     func labelInit(){
         ProjectTitle.text = project.title
         ProjectAddress.text = project.address
@@ -60,13 +61,10 @@ class ProjectDetailViewController: UIViewController {
     
     // Launch Apple map for the address requested
     @objc func addressFunctionTap(sender:UITapGestureRecognizer){
-        print("address is clicked!")
         let longtitude = project.longitude
         let latitude = project.latitude
         let address = "?ll=\(latitude),\(longtitude)"
         let url = URL(string: "http://maps.apple.com/?address=\(address)")
-
-        print("url: \(url!)")
 
 
         UIApplication.shared.open(url!, options: [:], completionHandler: nil)

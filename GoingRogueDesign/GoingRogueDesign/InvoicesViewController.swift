@@ -16,14 +16,32 @@ class InvoicesViewController: UIViewController {
     var project: Project!
     var invoices: [Invoice] = []
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        tableview.refreshControl = myRefreshControl
+
+        
         navigationItem.title = project.title
         createArray()
         
         tableview.dataSource = self
         tableview.delegate = self
         // Do any additional setup after loading the view.
+    }
+    
+    // Pull down to refresh the data
+    @objc func refresh(sender: UIRefreshControl){
+        self.invoices.removeAll()
+        createArray()
+
+        tableview.refreshControl?.endRefreshing()
     }
     
     func createArray(){
@@ -40,32 +58,51 @@ class InvoicesViewController: UIViewController {
                     for currentInvoice in querySnapshot!.documents {
                         print("Project name： \(currentInvoice.get("invoiceName"))")
                         let uploadDateTimeStamp = currentInvoice.get("invoiceDueDate") as! Timestamp
-                        let uploadDateString = self.dateConvertToString(date: uploadDateTimeStamp.dateValue())
+                        let uploadDateString = dateToStringConverter(date: uploadDateTimeStamp.dateValue(), time:false)
                         
+                        let invoicePaidDate = currentInvoice.get("invoicePaidDate") as? Timestamp ?? nil
+                        var stringPaidDate: String
                         
+                        if(invoicePaidDate == nil){
+                            stringPaidDate = "N/A"
+                        }
+                        else{
+                            stringPaidDate = dateToStringConverter(date: invoicePaidDate!.dateValue(), time: true)
+                        }
                         
-                        let invoice = Invoice(dueDate: uploadDateString, url: currentInvoice.get("invoiceLink") as? String ?? "N/A", name: currentInvoice.get("invoiceName") as? String ?? "N/A", type: (currentInvoice.get("invoiceType") as? String)!, projectID: currentInvoice.get("projectID") as? String ?? "N/A")
+                        let invoice = Invoice(dueDate: uploadDateString, url: currentInvoice.get("invoiceLink") as? String ?? "N/A", name: currentInvoice.get("invoiceName") as? String ?? "N/A", paid: (currentInvoice.get("invoiceType") as? String)!, projectID: currentInvoice.get("projectID") as? String ?? "N/A", invoiceID: currentInvoice.get("invoiceID") as? String ?? "N/A", dueDateForChecking: uploadDateTimeStamp.dateValue(), paidDate: stringPaidDate)
+                        
                         
                         self.invoices.append(invoice)
-                        print("Project Name: \(invoice.name)")
                     }
                         
                     self.tableview.reloadData()
                 }
         }
     }
-    
-    
-    // Takes the time stamp and convert to date
-    func dateConvertToString(date: Date) -> String{
-        let df = DateFormatter()
-        df.amSymbol = "AM"
-        df.pmSymbol = "PM"
-        df.dateFormat = "yyyy-MM-dd' at 'hh:mm a"
-        return df.string(from: date)
+
+    @IBAction func paidButtonTapped(_ sender: UIButton) {
+        sender.isSelected = !sender.isSelected
+        
+        guard let cell = sender.superview?.superview as? InvoicesCell else{
+            print("Error in retrieving the indexPath from paidButtonTapped()")
+            return
+        }
+         
+        let indexPath = tableview.indexPath(for: cell)
+        let invoice = invoices[indexPath!.row]
+        let db = Firestore.firestore()
+        let currentTime = Date()
+        
+        if(sender.isSelected){
+            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"paid","invoicePaidDate":currentTime], merge: true)
+        }
+        else{
+
+            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"unpaid","invoicePaidDate":""], merge: true)
+        }
     }
-
-
+    
 }
 
 extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
@@ -78,10 +115,29 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceCell") as! InvoicesCell
         
-        cell.setInvoice(invoice: currInvoice)
+        cell.paidButtonStatus(invoice: currInvoice)
+        let dueDate = cell.checkOverdue(invoice: currInvoice)
+        cell.setInvoice(invoice: currInvoice,dueDate: dueDate)
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height: CGFloat = CGFloat()
+        let currInvoice = invoices[indexPath.row]
+        if(currInvoice.paid == "paid"){
+            // Height after adding the invoicePaidDate label
+            height = 61
+
+        }
+        else{
+            // Same height as the task table's height
+            height = 44
+        }
+        
+        return height
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currInvoice = invoices[indexPath.row]
@@ -91,6 +147,23 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
 
         tableView.deselectRow(at: indexPath, animated: true)
         
+    }
+    
+    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
+        return true
+    }
+
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if (editingStyle == .delete) {
+            let db = Firestore.firestore()
+            let invoice = invoices[indexPath.row]
+            // handle delete (by removing the data from your array and updating the tableview)
+            tableview.beginUpdates()
+            invoices.remove(at: indexPath.row)
+            tableview.deleteRows(at: [indexPath], with: .fade)
+            db.collection("Invoice").document(invoice.invoiceID).delete()
+            tableview.endUpdates()
+        }
     }
     
 }

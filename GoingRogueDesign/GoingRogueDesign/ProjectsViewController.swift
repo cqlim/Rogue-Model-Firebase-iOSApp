@@ -15,12 +15,29 @@ class ProjectsViewController: UIViewController {
     
     var projects: [Project] = []
     
+    let myRefreshControl: UIRefreshControl = {
+        let refreshControl = UIRefreshControl()
+        refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
+        return refreshControl
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+
+        tableView.refreshControl = myRefreshControl
 
         createProjectArray()
         tableView.delegate = self
         tableView.dataSource = self
+
+    }
+    
+    // Pull down to refresh the data
+    @objc func refresh(sender: UIRefreshControl){
+        self.projects.removeAll()
+        createProjectArray()
+
+        tableView.refreshControl?.endRefreshing()
     }
 
     // Go through the list of projects from the DB and retrieve projects based on "customerEmail"
@@ -37,7 +54,7 @@ class ProjectsViewController: UIViewController {
                     if (documentEmail == document.get("customerEmail") as? String){
                         
                         let timeStamp = document.get("projectStartDate") as! Timestamp
-                        let dateString = dateConvertToString(date: timeStamp.dateValue())
+                        let dateString = dateToStringConverter(date: timeStamp.dateValue(), time: true)
                        
                         let _Project = Project(title: document.get("projectName") as? String ?? "N/A", address: document.get("projectAddress") as? String ?? "N/A", status: document.get("projectType") as? String ?? "N/A", startDate: dateString, description: document.get("projectDescription") as? String ?? "N/A", id: document.get("projectID") as? String ?? "N/A", longitude: document.get("projectLongitude") as? Float64 ?? 0.0, latitude: document.get("projectLatitude") as? Float64 ?? 0.0, manager: document.get("managerName") as? String ?? "N/A", mainContractor: document.get("projectMainContractorName") as? String ?? "N/A")
                         

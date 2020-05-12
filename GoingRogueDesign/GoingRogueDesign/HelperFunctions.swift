@@ -9,14 +9,22 @@
 import Foundation
 import UIKit
 
-// Takes the time stamp and convert to date
-func dateConvertToString(date: Date) -> String{
+// Takes the time stamp from Firebase and convert to date string
+func dateToStringConverter(date: Date, time: Bool) -> String{
     let df = DateFormatter()
     df.amSymbol = "AM"
     df.pmSymbol = "PM"
-    df.dateFormat = "yyyy-MM-dd' at 'hh:mm a"
+    if(time){
+        df.dateFormat = "MMM dd, yyyy' at 'hh:mm a"
+    }
+    else{
+        df.dateFormat = "MMM dd, yyyy"
+    }
+    
     return df.string(from: date)
 }
+
+
 
 // Make part of a text bold. Retrieved from "https://stackoverflow.com/questions/36486761/make-part-of-a-uilabel-bold-in-swift"
 
