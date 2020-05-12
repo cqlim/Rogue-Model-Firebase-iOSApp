@@ -115,12 +115,29 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "InvoiceCell") as! InvoicesCell
         
-        cell.paidButtonStatus(status: currInvoice.paid)
+        cell.paidButtonStatus(invoice: currInvoice)
         let dueDate = cell.checkOverdue(invoice: currInvoice)
         cell.setInvoice(invoice: currInvoice,dueDate: dueDate)
         
         return cell
     }
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        var height: CGFloat = CGFloat()
+        let currInvoice = invoices[indexPath.row]
+        if(currInvoice.paid == "paid"){
+            // Height after adding the invoicePaidDate label
+            height = 61
+
+        }
+        else{
+            // Same height as the task table's height
+            height = 44
+        }
+        
+        return height
+    }
+    
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let currInvoice = invoices[indexPath.row]

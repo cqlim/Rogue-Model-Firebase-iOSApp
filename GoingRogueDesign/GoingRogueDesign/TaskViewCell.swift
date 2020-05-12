@@ -33,8 +33,8 @@ class TaskViewCell: UITableViewCell {
     }
     
     // Sets the resolve button's state when launch the task view
-    func resolvedButtonStatus(status: String){
-        if(status == "completed"){
+    func resolvedButtonStatus(task: Task){
+        if(task.taskStatus == "completed"){
             resolvedButton.isSelected = true
         }
         else{

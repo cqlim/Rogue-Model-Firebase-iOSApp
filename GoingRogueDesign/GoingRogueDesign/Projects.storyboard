@@ -422,11 +422,11 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                                 <prototypes>
-                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvoiceCell" id="ckK-jl-oHn" customClass="InvoicesCell" customModule="GoingRogueDesign" customModuleProvider="target">
-                                        <rect key="frame" x="0.0" y="28" width="414" height="44"/>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" reuseIdentifier="InvoiceCell" rowHeight="61" id="ckK-jl-oHn" customClass="InvoicesCell" customModule="GoingRogueDesign" customModuleProvider="target">
+                                        <rect key="frame" x="0.0" y="28" width="414" height="61"/>
                                         <autoresizingMask key="autoresizingMask"/>
                                         <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ckK-jl-oHn" id="pXo-IB-4eH" customClass="InvoicesCell" customModule="GoingRogueDesign" customModuleProvider="target">
-                                            <rect key="frame" x="0.0" y="0.0" width="414" height="44"/>
+                                            <rect key="frame" x="0.0" y="0.0" width="414" height="61"/>
                                             <autoresizingMask key="autoresizingMask"/>
                                             <subviews>
                                                 <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YqC-ol-tyB" userLabel="NameLabel">
@@ -452,12 +452,20 @@
                                                         <action selector="paidButtonTapped:" destination="U8e-zr-EXq" eventType="touchUpInside" id="4hd-IS-gX9"/>
                                                     </connections>
                                                 </button>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="agF-eW-OUC" userLabel="PaidDateLabel">
+                                                    <rect key="frame" x="35" y="42" width="249" height="15"/>
+                                                    <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="12"/>
+                                                    <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
                                             </subviews>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="InvoiceDueLabel" destination="THy-lF-LuM" id="rew-U9-esU"/>
                                             <outlet property="InvoiceNameLabel" destination="YqC-ol-tyB" id="keJ-N9-Rkx"/>
                                             <outlet property="InvoicePaidButton" destination="uU3-zf-5le" id="DyG-3p-EbT"/>
+                                            <outlet property="InvoicePaidDateLabel" destination="agF-eW-OUC" id="64u-ia-UIb"/>
                                         </connections>
                                     </tableViewCell>
                                 </prototypes>
@@ -494,7 +502,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVU-nG-bdS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5073.913043478261" y="239.73214285714283"/>
+            <point key="canvasLocation" x="5072.8000000000002" y="239.73013493253376"/>
         </scene>
         <!--Projects-->
         <scene sceneID="CMe-3j-CAe">

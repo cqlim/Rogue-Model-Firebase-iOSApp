@@ -124,7 +124,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         
         let cell = tableView.dequeueReusableCell(withIdentifier: "TaskCell") as! TaskViewCell
         
-        cell.resolvedButtonStatus(status: task.taskStatus)
+        cell.resolvedButtonStatus(task: task)
         
         // Retrieving the red or black due date string
         taskDueDateAttributedString = cell.checkOverdue(task: task)

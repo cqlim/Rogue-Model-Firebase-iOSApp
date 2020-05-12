@@ -14,6 +14,7 @@ class InvoicesCell: UITableViewCell {
     @IBOutlet weak var InvoiceNameLabel: UILabel!
     @IBOutlet weak var InvoiceDueLabel: UILabel!
     @IBOutlet weak var InvoicePaidButton: UIButton!
+    @IBOutlet weak var InvoicePaidDateLabel: UILabel!
     
     
     func setInvoice(invoice: Invoice, dueDate: NSAttributedString){
@@ -23,12 +24,15 @@ class InvoicesCell: UITableViewCell {
     }
     
     // sets the paid button's state when launch the invoice view
-    func paidButtonStatus(status: String){
-        if(status == "paid"){
+    func paidButtonStatus(invoice: Invoice){
+        if(invoice.paid == "paid"){
             InvoicePaidButton.isSelected = true
+            InvoicePaidDateLabel.isHidden = false
+            InvoicePaidDateLabel.text = invoice.paidDate
         }
         else{
             InvoicePaidButton.isSelected = false
+            InvoicePaidDateLabel.isHidden = true
         }
     }
     
