@@ -150,6 +150,12 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         }
     }
   
+    @IBAction func addTaskButtonTapped(_ sender: Any) {
+        performSegue(withIdentifier: "createTask", sender: self)
+    }
+    
+    
+
     // Might need to redo the segue because this currently doesn't work
 //    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
 //        performSegue(withIdentifier: "ShowMoreTask", sender: self)
@@ -165,10 +171,27 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                     vc.tasks = tasks[row]
                 }
             }
+            
+            if segue.identifier == "createTask"{
+                if let addTaskvc = segue.destination as? AddTaskViewController{
+                    addTaskvc.customerEmail = Auth.auth().currentUser!.email!
+                    addTaskvc.userID = Auth.auth().currentUser!.uid
+                    addTaskvc.projectID =  self.project.id
+                    addTaskvc.delegate = self
+                }
+            }
     }
     
 
     }
+
+extension TaskViewController: addTaskDelegate{
+    func reloadTaskList() {
+        self.tasks.removeAll()
+        createTaskArray()
+    }
+    
+}
     
     
    

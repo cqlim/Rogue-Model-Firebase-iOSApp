@@ -29,6 +29,7 @@
 		38D1DE6023D661B000A9B35A /* Projects.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D1DE5F23D661B000A9B35A /* Projects.storyboard */; };
 		38D1DE6223D661BD00A9B35A /* Account.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D1DE6123D661BD00A9B35A /* Account.storyboard */; };
 		38D1DE6423D661CF00A9B35A /* Calculator.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 38D1DE6323D661CF00A9B35A /* Calculator.storyboard */; };
+		38F839F1246A97F2006B580E /* AddTaskViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 38F839F0246A97F2006B580E /* AddTaskViewController.swift */; };
 		520B4FC32412DD3D009A3579 /* ProjectDetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 520B4FC22412DD3D009A3579 /* ProjectDetailViewController.swift */; };
 		52235F4C23FD42F90071A06C /* ProjectsViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52235F4B23FD42F90071A06C /* ProjectsViewCell.swift */; };
 		52235F4E23FD47020071A06C /* Project.swift in Sources */ = {isa = PBXBuildFile; fileRef = 52235F4D23FD47020071A06C /* Project.swift */; };
@@ -72,6 +73,7 @@
 		38D1DE5F23D661B000A9B35A /* Projects.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Projects.storyboard; sourceTree = "<group>"; };
 		38D1DE6123D661BD00A9B35A /* Account.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Account.storyboard; sourceTree = "<group>"; };
 		38D1DE6323D661CF00A9B35A /* Calculator.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Calculator.storyboard; sourceTree = "<group>"; };
+		38F839F0246A97F2006B580E /* AddTaskViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddTaskViewController.swift; sourceTree = "<group>"; };
 		520B4FC22412DD3D009A3579 /* ProjectDetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectDetailViewController.swift; sourceTree = "<group>"; };
 		52235F4B23FD42F90071A06C /* ProjectsViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProjectsViewCell.swift; sourceTree = "<group>"; };
 		52235F4D23FD47020071A06C /* Project.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Project.swift; sourceTree = "<group>"; };
@@ -129,6 +131,7 @@
 				528DF0AC24303D3100D96820 /* ProjectDocumentsViewController.swift */,
 				528DF0AE2430533000D96820 /* DocumentsViewCell.swift */,
 				60ABFDD624369E2F00CA0323 /* TaskViewController.swift */,
+				38F839F0246A97F2006B580E /* AddTaskViewController.swift */,
 				606A2FAB243935F300CC4A65 /* TaskViewCell.swift */,
 				606A2FAF243946CE00CC4A65 /* MoreTaskViewController.swift */,
 				38105C9924417C7800468FC5 /* CalendarViewController.swift */,
@@ -362,6 +365,7 @@
 				528DF0AF2430533000D96820 /* DocumentsViewCell.swift in Sources */,
 				385F486223E3864A00035854 /* ReqInfoSubmitViewController.swift in Sources */,
 				60ABFDD724369E2F00CA0323 /* TaskViewController.swift in Sources */,
+				38F839F1246A97F2006B580E /* AddTaskViewController.swift in Sources */,
 				38B970C123E0D4F5000B89D5 /* Constants.swift in Sources */,
 				606A2FAC243935F300CC4A65 /* TaskViewCell.swift in Sources */,
 				528DF0AD24303D3100D96820 /* ProjectDocumentsViewController.swift in Sources */,

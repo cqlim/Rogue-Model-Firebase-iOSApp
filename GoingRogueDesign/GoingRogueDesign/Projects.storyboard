@@ -400,14 +400,135 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="Qvt-0a-vOV"/>
                     </view>
-                    <navigationItem key="navigationItem" id="78S-2z-eQP"/>
+                    <navigationItem key="navigationItem" id="78S-2z-eQP">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="PNj-aa-xZ6">
+                            <connections>
+                                <action selector="addTaskButtonTapped:" destination="qcJ-Bg-cEQ" id="iro-pf-m8c"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                     <connections>
                         <outlet property="taskTableView" destination="uvP-lT-CmG" id="YJZ-qM-Cqj"/>
+                        <segue destination="Xyj-RA-CGg" kind="presentation" identifier="createTask" id="3w6-wl-d6H"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="gfU-da-QdX" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3534.7826086956525" y="1593.75"/>
+            <point key="canvasLocation" x="3534" y="1654"/>
+        </scene>
+        <!--Add Task View Controller-->
+        <scene sceneID="Dga-AX-mWP">
+            <objects>
+                <viewController id="Xyj-RA-CGg" customClass="AddTaskViewController" customModule="GoingRogueDesign" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="TUR-gc-g0Q">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="647"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Add a Task" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="zWM-QE-41y">
+                                <rect key="frame" x="30" y="30" width="99" height="22.5"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="20"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="VtM-v0-rbu">
+                                <rect key="frame" x="30" y="72.5" width="315" height="332"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Name*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A8X-z5-elf">
+                                        <rect key="frame" x="0.0" y="0.0" width="315" height="19"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4Od-GK-dQT">
+                                        <rect key="frame" x="0.0" y="34" width="315" height="34"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Due Date*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tqI-kI-9FS">
+                                        <rect key="frame" x="0.0" y="83" width="315" height="19"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" text="Please tap to pick a date" borderStyle="roundedRect" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="KPQ-qX-VUY">
+                                        <rect key="frame" x="0.0" y="117" width="315" height="34"/>
+                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="16"/>
+                                        <textInputTraits key="textInputTraits"/>
+                                    </textField>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Task Description*" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wxk-Kt-NJG">
+                                        <rect key="frame" x="0.0" y="166" width="315" height="19"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="qjG-bv-mt4">
+                                        <rect key="frame" x="0.0" y="200" width="315" height="100"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="100" id="MV1-0D-xv8"/>
+                                        </constraints>
+                                        <color key="textColor" systemColor="labelColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0/200" textAlignment="right" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6o5-Wc-6wS">
+                                        <rect key="frame" x="0.0" y="315" width="315" height="17"/>
+                                        <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="15"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOd-g3-J4B">
+                                <rect key="frame" x="30" y="439.5" width="315" height="40"/>
+                                <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="MjO-Kp-1aV"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
+                                <state key="normal" title="Create">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                </state>
+                                <connections>
+                                    <action selector="createTaskButtonTapped:" destination="Xyj-RA-CGg" eventType="touchUpInside" id="8Sl-w6-tCY"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Error" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TqE-JZ-xrh">
+                                <rect key="frame" x="30" y="499.5" width="315" height="19"/>
+                                <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
+                                <color key="textColor" systemColor="systemRedColor" red="1" green="0.23137254900000001" blue="0.18823529410000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="TqE-JZ-xrh" firstAttribute="top" secondItem="nOd-g3-J4B" secondAttribute="bottom" constant="20" id="6N8-sf-LbL"/>
+                            <constraint firstItem="TqE-JZ-xrh" firstAttribute="leading" secondItem="m2K-bX-QwC" secondAttribute="leading" constant="30" id="AAL-4a-4ML"/>
+                            <constraint firstItem="m2K-bX-QwC" firstAttribute="trailing" secondItem="TqE-JZ-xrh" secondAttribute="trailing" constant="30" id="BFZ-tt-nFZ"/>
+                            <constraint firstItem="nOd-g3-J4B" firstAttribute="leading" secondItem="m2K-bX-QwC" secondAttribute="leading" constant="30" id="EXS-vi-rKL"/>
+                            <constraint firstItem="zWM-QE-41y" firstAttribute="leading" secondItem="m2K-bX-QwC" secondAttribute="leading" constant="30" id="Gm8-mY-OFJ"/>
+                            <constraint firstItem="VtM-v0-rbu" firstAttribute="top" secondItem="zWM-QE-41y" secondAttribute="bottom" constant="20" id="QYW-gE-Apu"/>
+                            <constraint firstItem="zWM-QE-41y" firstAttribute="top" secondItem="m2K-bX-QwC" secondAttribute="top" constant="30" id="WpW-Fc-xeZ"/>
+                            <constraint firstItem="m2K-bX-QwC" firstAttribute="trailing" secondItem="nOd-g3-J4B" secondAttribute="trailing" constant="30" id="bhh-PH-Rco"/>
+                            <constraint firstItem="nOd-g3-J4B" firstAttribute="top" secondItem="VtM-v0-rbu" secondAttribute="bottom" constant="35" id="cyw-2p-sGE"/>
+                            <constraint firstItem="m2K-bX-QwC" firstAttribute="trailing" secondItem="VtM-v0-rbu" secondAttribute="trailing" constant="30" id="peM-M5-V2d"/>
+                            <constraint firstItem="VtM-v0-rbu" firstAttribute="leading" secondItem="m2K-bX-QwC" secondAttribute="leading" constant="30" id="wZh-Cb-l4Q"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="m2K-bX-QwC"/>
+                    </view>
+                    <connections>
+                        <outlet property="createTaskButton" destination="nOd-g3-J4B" id="hIp-hw-QYV"/>
+                        <outlet property="descriptionCharCountLabel" destination="6o5-Wc-6wS" id="uFu-cg-7w5"/>
+                        <outlet property="dueDateTextField" destination="KPQ-qX-VUY" id="yVw-dJ-MGO"/>
+                        <outlet property="errorLabel" destination="TqE-JZ-xrh" id="GNR-nA-TpV"/>
+                        <outlet property="taskDescriptionTextView" destination="qjG-bv-mt4" id="fUG-SR-2g3"/>
+                        <outlet property="taskNameTextField" destination="4Od-GK-dQT" id="th5-Gc-6g2"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dO8-J1-gUs" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4653.6000000000004" y="1668.2158920539732"/>
         </scene>
         <!--Invoices View Controller-->
         <scene sceneID="4Pi-iu-Ogc">
@@ -589,7 +710,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zmm-ai-Muo" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="5073.913043478261" y="1593.75"/>
+            <point key="canvasLocation" x="3534" y="2505"/>
         </scene>
         <!--Calendar View Controller-->
         <scene sceneID="nmx-4c-A46">
