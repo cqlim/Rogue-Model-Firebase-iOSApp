@@ -18,6 +18,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     var selectedtasks : Task!
     var taskDueDateAttributedString = NSAttributedString()
 
+    // Pull down to refresh feature
     let myRefreshControl: UIRefreshControl = {
         let refreshControl = UIRefreshControl()
         refreshControl.addTarget(self, action: #selector(refresh(sender:)), for: .valueChanged)
@@ -55,7 +56,6 @@ class TaskViewController: UIViewController, UITableViewDataSource {
                         if (projectID == document.get("projectID") as? String){
                             
                             let taskDueDate = document.get("taskDueDate") as! Timestamp
-                            
                             let stringTaskDueDate = dateToStringConverter(date: taskDueDate.dateValue(), time: true)
                             
                             let taskResolvedDate = document.get("taskResolvedDate") as? Timestamp ?? nil
@@ -80,7 +80,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         }
     
 
-    
+    // Change the state of the checkbox when it's clicked
     @IBAction func resolvedButtonTapped(_ sender: UIButton) {
 //        UIView.animate(withDuration: 0, delay: 0, options: .curveLinear,
 //                       animations: {
@@ -104,6 +104,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         let db = Firestore.firestore()
         let currentTime = Date()
         
+        // Sends the state of the task to the Firebase database
         if(sender.isSelected){
             db.collection("Task").document(task.taskID).setData(["taskType":"completed", "taskResolvedDate":currentTime], merge: true)
         }
@@ -184,6 +185,7 @@ class TaskViewController: UIViewController, UITableViewDataSource {
     
 
     }
+
 
 extension TaskViewController: addTaskDelegate{
     func reloadTaskList() {

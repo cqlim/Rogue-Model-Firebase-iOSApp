@@ -25,8 +25,8 @@ func dateToStringConverter(date: Date, time: Bool) -> String{
 }
 
 
-
-// Make part of a text bold. Retrieved from "https://stackoverflow.com/questions/36486761/make-part-of-a-uilabel-bold-in-swift"
+// Make part of a text bold. For displaying information in detail
+// Retrieved from "https://stackoverflow.com/questions/36486761/make-part-of-a-uilabel-bold-in-swift"
 
 func attributedText(withString string: String, boldString: String, font: UIFont) -> NSAttributedString {
     let attributedString = NSMutableAttributedString(string: string,

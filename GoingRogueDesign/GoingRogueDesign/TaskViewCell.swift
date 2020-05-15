@@ -14,6 +14,7 @@ class TaskViewCell: UITableViewCell {
     @IBOutlet weak var taskDueDate: UILabel!
     @IBOutlet weak var resolvedButton: UIButton!
     
+    // Sets the task labels
     func setTask(task: Task, dueDate: NSAttributedString){
         
         taskName.text = task.taskName

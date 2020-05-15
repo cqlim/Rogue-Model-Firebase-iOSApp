@@ -26,6 +26,8 @@ class ProjectsViewController: UIViewController {
 
         tableView.refreshControl = myRefreshControl
 
+        tableView.rowHeight = 70
+        
         createProjectArray()
         tableView.delegate = self
         tableView.dataSource = self
@@ -85,6 +87,7 @@ extension ProjectsViewController: UITableViewDataSource, UITableViewDelegate{
         let cell = tableView.dequeueReusableCell(withIdentifier: "ProjectCell") as! ProjectsViewCell
         
         cell.setProject(project: project)
+        cell.setAccessoryStatus(project: project)
         
         return cell
     }

@@ -46,6 +46,7 @@ class InvoicesViewController: UIViewController {
         tableview.refreshControl?.endRefreshing()
     }
     
+    // Creates the Invoice array
     func createArray(){
         let db = Firestore.firestore()
         let projectID = project.id
@@ -83,6 +84,7 @@ class InvoicesViewController: UIViewController {
         }
     }
 
+    // Change the state of the checkbox when it's clicked
     @IBAction func paidButtonTapped(_ sender: UIButton) {
         sender.isSelected = !sender.isSelected
         

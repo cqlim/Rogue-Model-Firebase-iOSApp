@@ -18,7 +18,6 @@ class Invoice{
     var dueDateForChecking: Date
     var paidDate: String
     
-//    var date = Date()
     
     init(dueDate: String, url: String, name: String, paid: String, projectID: String, invoiceID: String, dueDateForChecking: Date, paidDate: String) {
         self.dueDate = dueDate
