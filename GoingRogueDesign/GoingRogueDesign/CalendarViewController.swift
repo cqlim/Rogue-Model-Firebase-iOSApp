@@ -46,12 +46,15 @@ class CalendarViewController: UIViewController {
         tableview.refreshControl?.endRefreshing()
     }
     
+    
+    // Create the calendar object array
     func createArray(){
         let db = Firestore.firestore()
         let projectID = project.id
         
         print("ProjectID： \(projectID)")
         
+        // Fetch the related calendar data by the current project ID
         db.collection("Calender").whereField("projectID", isEqualTo: projectID)
             .getDocuments() { (querySnapshot, err) in
                 if err != nil {
@@ -61,9 +64,10 @@ class CalendarViewController: UIViewController {
                         print("Calendar name： \(currentCalendar.get("calanderName"))")
                         
                         
-                        
+                        // Create the new calendar object.
                         let calendar = Calendar(name: currentCalendar.get("calanderName") as? String ?? "N/A",link: currentCalendar.get("calanderLink") as? String ?? "N/A", projectID: currentCalendar.get("projectID") as? String ?? "N/A")
                         
+                        // Store the new calendar object into the 'calendar array'.
                         self.calendars.append(calendar)
                         print("Calendar Name: \(calendar.name)")
                     }

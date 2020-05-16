@@ -13,7 +13,7 @@ class CalendarViewCell: UITableViewCell {
     
     @IBOutlet weak var CalendarNameLabel: UILabel!
     
-    
+    // Set up the label's data so that it can display calendar data properly.
     func setCalendar(calendar: Calendar){
         
         CalendarNameLabel.text = calendar.name

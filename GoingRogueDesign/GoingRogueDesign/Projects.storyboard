@@ -77,82 +77,10 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="X7W-He-NLp" userLabel="Stack View 1">
-                                <rect key="frame" x="30" y="418" width="315" height="40"/>
+                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RPs-gd-09n">
+                                <rect key="frame" x="15" y="54" width="345" height="393"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVq-XK-w3R" userLabel="ProjectDocument">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="GW4-l3-3z7"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                        <state key="normal" title="Documents">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="k7D-WB-PsI" kind="show" identifier="ShowProjectDocuments" id="w4c-QQ-p5W"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2U-Hh-jhn" userLabel="ProjectInvoice">
-                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Dpo-CD-fZS"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                        <state key="normal" title="Invoices">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="InvoiceButtonTapped:" destination="h2W-Xi-II4" eventType="touchUpInside" id="TWE-hu-DcS"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="RXD-4h-db9"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="uga-9w-Kt5" userLabel="Stack View 2">
-                                <rect key="frame" x="30" y="518" width="315" height="40"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bh-Jh-eB5" userLabel="ProjectTask">
-                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="Dhf-GJ-Swr"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                        <state key="normal" title="Tasks">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="qcJ-Bg-cEQ" kind="show" identifier="ShowTask" id="WTD-Gm-c7g"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNm-es-Cso" userLabel="ProjectCalendar">
-                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="40"/>
-                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="40" id="lca-4I-GHR"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="17"/>
-                                        <state key="normal" title="Calendar">
-                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
-                                        </state>
-                                        <connections>
-                                            <segue destination="fA8-1d-POb" kind="show" identifier="goCalendarList" id="Ief-lt-adn"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="40" id="3Ac-Bo-Nh3"/>
-                                </constraints>
-                            </stackView>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" alwaysBounceVertical="YES" translatesAutoresizingMaskIntoConstraints="NO" id="RPs-gd-09n">
-                                <rect key="frame" x="16" y="66" width="329" height="344"/>
-                                <subviews>
-                                    <stackView opaque="NO" contentMode="scaleToFill" ambiguous="YES" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HLr-id-Jcv" userLabel="Labels Stack View">
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="7" translatesAutoresizingMaskIntoConstraints="NO" id="HLr-id-Jcv" userLabel="Labels Stack View">
                                         <rect key="frame" x="0.0" y="0.0" width="345" height="197.5"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MBN-cj-fNH" userLabel="ProjectTitle">
@@ -201,23 +129,109 @@
                                     </stackView>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="HLr-id-Jcv" firstAttribute="width" secondItem="RPs-gd-09n" secondAttribute="width" id="Ig1-uJ-ghC"/>
+                                    <constraint firstItem="HLr-id-Jcv" firstAttribute="leading" secondItem="DCu-Q0-POv" secondAttribute="leading" id="7ks-9h-Jow"/>
+                                    <constraint firstItem="HLr-id-Jcv" firstAttribute="top" secondItem="DCu-Q0-POv" secondAttribute="top" id="VDk-da-Ne5"/>
+                                    <constraint firstItem="HLr-id-Jcv" firstAttribute="width" secondItem="JWB-iT-YZv" secondAttribute="width" id="Wnj-vg-gPV"/>
+                                    <constraint firstItem="HLr-id-Jcv" firstAttribute="trailing" secondItem="DCu-Q0-POv" secondAttribute="trailing" id="Xcf-lC-NtB"/>
+                                    <constraint firstItem="HLr-id-Jcv" firstAttribute="bottom" secondItem="DCu-Q0-POv" secondAttribute="bottom" id="vnM-ch-vQg"/>
                                 </constraints>
                                 <viewLayoutGuide key="contentLayoutGuide" id="DCu-Q0-POv"/>
                                 <viewLayoutGuide key="frameLayoutGuide" id="JWB-iT-YZv"/>
                             </scrollView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="X7W-He-NLp" userLabel="Stack View 1">
+                                <rect key="frame" x="30" y="488" width="315" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IVq-XK-w3R" userLabel="ProjectDocument">
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="GW4-l3-3z7"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                        <state key="normal" title="Documents">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="k7D-WB-PsI" kind="show" identifier="ShowProjectDocuments" id="w4c-QQ-p5W"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Y2U-Hh-jhn" userLabel="ProjectInvoice">
+                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Dpo-CD-fZS"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                        <state key="normal" title="Invoices">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="InvoiceButtonTapped:" destination="h2W-Xi-II4" eventType="touchUpInside" id="TWE-hu-DcS"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="RXD-4h-db9"/>
+                                </constraints>
+                            </stackView>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="40" translatesAutoresizingMaskIntoConstraints="NO" id="uga-9w-Kt5" userLabel="Stack View 2">
+                                <rect key="frame" x="30" y="548" width="315" height="40"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1bh-Jh-eB5" userLabel="ProjectTask">
+                                        <rect key="frame" x="0.0" y="0.0" width="137.5" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="Dhf-GJ-Swr"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                        <state key="normal" title="Tasks">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="qcJ-Bg-cEQ" kind="show" identifier="ShowTask" id="WTD-Gm-c7g"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bNm-es-Cso" userLabel="ProjectCalendar">
+                                        <rect key="frame" x="177.5" y="0.0" width="137.5" height="40"/>
+                                        <color key="backgroundColor" red="0.0" green="0.47843137250000001" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="40" id="lca-4I-GHR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" name="Arial-BoldMT" family="Arial" pointSize="16"/>
+                                        <state key="normal" title="Calendar">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                        </state>
+                                        <connections>
+                                            <segue destination="fA8-1d-POb" kind="show" identifier="goCalendarList" id="Ief-lt-adn"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="3Ac-Bo-Nh3"/>
+                                </constraints>
+                            </stackView>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Ki1-OK-jgu">
+                                <rect key="frame" x="0.0" y="467" width="375" height="1"/>
+                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="1" id="mja-Xg-Gj3"/>
+                                </constraints>
+                            </view>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="RPs-gd-09n" firstAttribute="top" secondItem="v89-uY-Oht" secondAttribute="top" constant="10" id="1S6-7h-6pH"/>
                             <constraint firstItem="X7W-He-NLp" firstAttribute="leading" secondItem="v89-uY-Oht" secondAttribute="leading" constant="30" id="32M-B8-lhW"/>
+                            <constraint firstItem="Ki1-OK-jgu" firstAttribute="top" secondItem="RPs-gd-09n" secondAttribute="bottom" constant="20" id="41w-vi-G8b"/>
+                            <constraint firstItem="Ki1-OK-jgu" firstAttribute="leading" secondItem="v89-uY-Oht" secondAttribute="leading" id="5lc-pb-UIy"/>
+                            <constraint firstItem="RPs-gd-09n" firstAttribute="top" secondItem="v89-uY-Oht" secondAttribute="top" constant="10" id="8UH-pW-nxV"/>
                             <constraint firstItem="v89-uY-Oht" firstAttribute="trailing" secondItem="uga-9w-Kt5" secondAttribute="trailing" constant="30" id="CDX-ou-x2t"/>
-                            <constraint firstItem="v89-uY-Oht" firstAttribute="bottom" secondItem="uga-9w-Kt5" secondAttribute="bottom" constant="60" id="DMl-xR-nFf"/>
-                            <constraint firstItem="v89-uY-Oht" firstAttribute="trailing" secondItem="RPs-gd-09n" secondAttribute="trailing" constant="15" id="GI8-t1-do9"/>
-                            <constraint firstItem="uga-9w-Kt5" firstAttribute="top" secondItem="X7W-He-NLp" secondAttribute="bottom" constant="60" id="fec-8y-3vl"/>
+                            <constraint firstItem="v89-uY-Oht" firstAttribute="bottom" secondItem="uga-9w-Kt5" secondAttribute="bottom" constant="30" id="DMl-xR-nFf"/>
+                            <constraint firstItem="X7W-He-NLp" firstAttribute="top" secondItem="Ki1-OK-jgu" secondAttribute="bottom" constant="20" id="NlD-2k-kcd"/>
+                            <constraint firstItem="v89-uY-Oht" firstAttribute="trailing" secondItem="Ki1-OK-jgu" secondAttribute="trailing" id="Y7l-UH-44B"/>
+                            <constraint firstItem="RPs-gd-09n" firstAttribute="leading" secondItem="v89-uY-Oht" secondAttribute="leading" constant="15" id="cWo-Fc-tc3"/>
+                            <constraint firstItem="v89-uY-Oht" firstAttribute="trailing" secondItem="RPs-gd-09n" secondAttribute="trailing" constant="15" id="dVN-wd-UlK"/>
+                            <constraint firstItem="uga-9w-Kt5" firstAttribute="top" secondItem="X7W-He-NLp" secondAttribute="bottom" constant="20" id="fec-8y-3vl"/>
                             <constraint firstItem="uga-9w-Kt5" firstAttribute="leading" secondItem="v89-uY-Oht" secondAttribute="leading" constant="30" id="irl-K0-TUi"/>
-                            <constraint firstItem="RPs-gd-09n" firstAttribute="leading" secondItem="v89-uY-Oht" secondAttribute="leading" constant="15" id="lpp-NX-TmV"/>
-                            <constraint firstItem="X7W-He-NLp" firstAttribute="top" secondItem="RPs-gd-09n" secondAttribute="bottom" constant="10" id="ozf-Xo-lun"/>
                             <constraint firstItem="v89-uY-Oht" firstAttribute="trailing" secondItem="X7W-He-NLp" secondAttribute="trailing" constant="30" id="qg8-gR-ImY"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="v89-uY-Oht"/>

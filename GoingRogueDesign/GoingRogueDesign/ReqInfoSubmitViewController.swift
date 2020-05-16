@@ -41,10 +41,7 @@ class ReqInfoSubmitViewController: UIViewController, MFMailComposeViewController
         messageTextView.layer.borderColor = UIColor.lightGray.cgColor
 
         // Set up submit button's properties
-//        submitButton.setTitleColor(UIColor(red: 0/255, green: 211/255, blue: 170/225, alpha: 1), for: .normal)
         submitButton.layer.cornerRadius = 15.0
-//        submitButton.layer.borderWidth = 3
-//        submitButton.layer.borderColor = UIColor(red: 0/255, green: 211/255, blue: 170/225, alpha: 1).cgColor
     }
     
     func validateFields() -> String?{
@@ -89,6 +86,7 @@ class ReqInfoSubmitViewController: UIViewController, MFMailComposeViewController
             return
         }
         
+        // Fill the mail composer by user's input
         let composer = MFMailComposeViewController()
         composer.mailComposeDelegate = self
         composer.setToRecipients(["1787829765@qq.com"])
@@ -133,6 +131,7 @@ class ReqInfoSubmitViewController: UIViewController, MFMailComposeViewController
         errorLabel.alpha = 0;
     }
 
+    // Allow user to dismiss the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

@@ -14,6 +14,7 @@ class DocumentsViewCell: UITableViewCell {
             
     @IBOutlet weak var DocumentType: UILabel!
     
+    // Set up the label's data so that it can display document data properly.
     func setDocument(document: Document){
             
         DocumentTitle.text = document.title

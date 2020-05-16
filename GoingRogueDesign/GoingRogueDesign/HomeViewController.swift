@@ -58,6 +58,7 @@ class HomeViewController: UIViewController {
            tabBarItem2!.isEnabled = x
        }
     
+    // Display the customer's name when he/she has signed in.
     func signInName(){
         let documentEmail = Auth.auth().currentUser!.email
         let customerCollection = Firestore.firestore().collection("Customer")
@@ -77,6 +78,7 @@ class HomeViewController: UIViewController {
         }
     }
     
+    
     func userTabBarValidation(){
         let user = Auth.auth().currentUser
         
@@ -90,6 +92,7 @@ class HomeViewController: UIViewController {
         
     }
     
+    // Open the correct url when a certain button get tapped.
     @IBAction func FaceBookButtonTapped(_ sender: Any) {
         UIApplication.shared.open(URL(string:"https://www.facebook.com/goingroguedesign/?ref=aymt_homepage_panel")! as URL, options: [:], completionHandler: nil)
 
@@ -97,7 +100,8 @@ class HomeViewController: UIViewController {
     
     
     @IBAction func TwitterButtonTapped(_ sender: Any) {
-        UIApplication.shared.open(URL(string:"https://twitter.com/")! as URL, options: [:], completionHandler: nil)
+        UIApplication.shared.open(URL(string:"https://twitter.com/design_going/")! as URL, options: [:], completionHandler: nil)
+        
     }
     
     
@@ -116,17 +120,12 @@ class HomeViewController: UIViewController {
     }
     
     
-    
+    // Check if there is a current user and make the button have different reactions
     @IBAction func SignInButtonTapped(_ sender: Any) {
         let user = Auth.auth().currentUser
                
         if (user != nil){
-//            let viewController:UINavigationController = (UIStoryboard(name: "Account", bundle: nil).instantiateViewController(withIdentifier: "goAccount") as? UINavigationController)!
-
             self.tabBarController!.selectedIndex = 2
-
-//            self.view.window?.rootViewController = viewController
-//            self.view.window?.makeKeyAndVisible()
         }
         else{
            performSegue(withIdentifier: "showSignInScreen", sender: nil)

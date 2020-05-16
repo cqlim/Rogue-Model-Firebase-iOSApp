@@ -49,7 +49,6 @@ class AddTaskViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneac))
         toolBar.setItems([doneButton], animated: true)
         dueDateTextField.inputAccessoryView = toolBar
-        //datePicker?.addTarget(self, action: #selector(dateChanged(datePicker:)), for: .valueChanged)
         dueDateTextField.inputView = datePicker
         
         
@@ -76,16 +75,19 @@ class AddTaskViewController: UIViewController, UITextViewDelegate, UITextFieldDe
 
     }
     
+    // Show how many characters are able to be texted.
     func updateCharacterCount() {
         let descriptionCount = self.taskDescriptionTextView.text.count
 
         self.descriptionCharCountLabel.text = "\((0) + descriptionCount)/200"
     }
 
+    // Update the textview's current characters' count
     func textViewDidChange(_ textView: UITextView) {
         self.updateCharacterCount()
     }
 
+    // Check if the characters exceed the limitation. If it is, disable editing.
     func textView(_ textView: UITextView, shouldChangeTextIn range: NSRange, replacementText text: String) -> Bool{
         if(textView == taskDescriptionTextView){
            return textView.text.count +  (text.count - range.length) <= 200
@@ -129,12 +131,10 @@ class AddTaskViewController: UIViewController, UITextViewDelegate, UITextFieldDe
                         delegate.reloadTaskList()
                     }
                     
+                    // Give user a wait time to load the data
                     DispatchQueue.main.asyncAfter(deadline: .now() + 3.0) {
                         self.dismiss(animated: true, completion: nil)
                     }
-
-                    
-
                 }
             }
         }
@@ -145,6 +145,8 @@ class AddTaskViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         self.errorLabel.text = message
         self.errorLabel.alpha = 1
     }
+    
+    // Allow user to dismiss the keyboard.
     
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
@@ -169,10 +171,7 @@ class AddTaskViewController: UIViewController, UITextViewDelegate, UITextFieldDe
         }
     }
     
-//    @objc func dateChanged(datePicker: UIDatePicker){
-//
-//    }
-    
+    // Set up the date picker's display data into a proper format.
     @objc func doneac(){
         let dateFormatter = DateFormatter()
         dateFormatter.dateFormat = "EEE   MM/dd/yyyy"

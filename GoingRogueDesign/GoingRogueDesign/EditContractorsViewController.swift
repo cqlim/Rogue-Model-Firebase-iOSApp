@@ -57,8 +57,6 @@ class EditContractorsViewController: UIViewController {
         self.scrollView.topAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.topAnchor).isActive = true;
         self.scrollView.widthAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.widthAnchor).isActive = true;
         self.scrollView.bottomAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.bottomAnchor).isActive = true;
-//        self.scrollView.trailingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.trailingAnchor).isActive = true;
-//        self.scrollView.leadingAnchor.constraint(equalTo: self.view.safeAreaLayoutGuide.leadingAnchor).isActive = true;
 
         
         // Set up content view's constraints
@@ -66,8 +64,6 @@ class EditContractorsViewController: UIViewController {
         self.contentView.widthAnchor.constraint(equalTo: self.view.widthAnchor).isActive = true
         self.contentView.topAnchor.constraint(equalTo: self.scrollView.topAnchor).isActive = true
         self.contentView.bottomAnchor.constraint(equalTo: self.scrollView.bottomAnchor).isActive = true
-//        self.contentView.trailingAnchor.constraint(equalTo: self.scrollView.trailingAnchor).isActive = true;
-//        self.contentView.leadingAnchor.constraint(equalTo: self.scrollView.leadingAnchor).isActive = true;
     }
     
     func checkContractors(){
@@ -170,7 +166,6 @@ class EditContractorsViewController: UIViewController {
     
     func showError(_ message:String){
         self.errorLabel.text = message
-        //errorLabel.textColor = UIColor.red
         self.errorLabel.textColor = UIColor(red:0.28, green:0.60, blue:0.94, alpha: 1)
         self.errorLabel.font = UIFont(name: "Arial", size: CGFloat(19))
         self.errorLabel.textAlignment = .center
@@ -189,23 +184,23 @@ class EditContractorsViewController: UIViewController {
     
     func addContractorButtonsToStackView(){
         for contractor in contractorArray{
+            // Create the button and setup its styling
             let button = UIButton()
             button.setTitle("\(contractor.firstName) \(contractor.lastName)", for: .normal)
-            button.setTitleColor(.black, for: .normal)
-            button.backgroundColor = .red
+            button.setTitleColor(.white, for: .normal)
+            button.backgroundColor = UIColor(red:0.0, green:122.0/255, blue:1.0, alpha: 1)
             
-//            button.backgroundColor = UIColor(red:0.28, green:0.60, blue:0.94, alpha: 1)
-            button.layer.borderWidth = 2.5
-            button.layer.borderColor = UIColor.black.cgColor
+//            button.layer.borderWidth = 2.5
+//            button.layer.borderColor = UIColor.black.cgColor
             button.layer.cornerRadius = 10
             button.heightAnchor.constraint(equalToConstant: 80).isActive = true
             button.titleLabel?.font = UIFont(name: "Arial", size: CGFloat(20))
             button.tag = index
-            button.addTarget(self, action: #selector(contractorButtonAction), for: .touchUpInside)
             // 4. Add the feature that when any of these contractor's button get clicked
                     // (1) Save the data of the current contractor
             
                     // (2) Pass this contractor's data to a new view controller which displays the contractor's information
+            button.addTarget(self, action: #selector(contractorButtonAction), for: .touchUpInside)
             self.stackView.addArrangedSubview(button)
             index = index + 1
         }
@@ -221,8 +216,11 @@ class EditContractorsViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Make the view controller transition
         self.currentContractor = contractorArray[position]
         let vc = segue.destination as! ShowContractorInfoViewController
+        
+        // Pass the data to the next view controller
         vc.phoneNumber = self.currentContractor.phoneNumber
         vc.firstName = self.currentContractor.firstName
         vc.lastName =  self.currentContractor.lastName
@@ -236,14 +234,14 @@ class EditContractorsViewController: UIViewController {
     
     
     func addInsertionButtonsToStackView(){
+        // Create the button and setup its styling
         let button = UIButton()
         button.setTitle("+", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .red
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(red:0.0, green:122.0/255, blue:1.0, alpha: 1)
         
-//            button.backgroundColor = UIColor(red:0.28, green:0.60, blue:0.94, alpha: 1)
-        button.layer.borderWidth = 2.5
-        button.layer.borderColor = UIColor.black.cgColor
+//        button.layer.borderWidth = 2.5
+//        button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 10
         button.heightAnchor.constraint(equalToConstant: 80).isActive = true
         button.titleLabel?.font = UIFont(name: "Arial", size: CGFloat(35))
@@ -260,12 +258,11 @@ class EditContractorsViewController: UIViewController {
         // Create a new button and set title to "New Contractor"
         let button = UIButton()
         button.setTitle("New Contractor", for: .normal)
-        button.setTitleColor(.black, for: .normal)
-        button.backgroundColor = .red
+        button.setTitleColor(.white, for: .normal)
+        button.backgroundColor = UIColor(red:0.0, green:122.0/255, blue:1.0, alpha: 1)
         
-    //            button.backgroundColor = UIColor(red:0.28, green:0.60, blue:0.94, alpha: 1)
-        button.layer.borderWidth = 2.5
-        button.layer.borderColor = UIColor.black.cgColor
+//        button.layer.borderWidth = 2.5
+//        button.layer.borderColor = UIColor.black.cgColor
         button.layer.cornerRadius = 10
         button.heightAnchor.constraint(equalToConstant: 80).isActive = true
         button.titleLabel?.font = UIFont(name: "Arial", size: CGFloat(20))
@@ -304,6 +301,4 @@ extension EditContractorsViewController: contractorInfoDelegate{
         // Recall viewDidLoad() to reload the screen.
         viewDidLoad()
     }
-        // Go to the firestore and check if the current user has any contractor
-
 }

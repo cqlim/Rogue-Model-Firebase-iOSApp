@@ -53,12 +53,15 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         let db = Firestore.firestore()
         let userEmail = Auth.auth().currentUser!.email!
         
+        // Fetch the customer data based on current user's email
         db.collection("Customer").whereField("customerEmail", isEqualTo: userEmail)
             .getDocuments() { (querySnapshot, err) in
                 if err != nil {
                     self.showError("Couldn't load data.")
                 } else {
                     for currentDocument in querySnapshot!.documents {
+                        
+                        // Display the correct user's personal data properly
                         self.userID = currentDocument.get("customerID") as! String
                         
                         self.firstNameTextField.text = currentDocument.get("customerFirstName") as? String
@@ -117,6 +120,7 @@ class EditAccountViewController: UIViewController, UITextFieldDelegate {
         self.errorLabel.alpha = 1
     }
     
+    // Allow user to dismiss the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

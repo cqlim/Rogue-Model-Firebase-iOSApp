@@ -45,6 +45,7 @@ class AccountViewController: UIViewController {
         let db = Firestore.firestore()
         let userEmail = Auth.auth().currentUser!.email!
         
+        // Fetch the customer data based on current user's email
         db.collection("Customer").whereField("customerEmail", isEqualTo: userEmail)
             .getDocuments() { (querySnapshot, err) in
                 if err != nil {
@@ -66,6 +67,7 @@ class AccountViewController: UIViewController {
     
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Allow the view controller transition and make sure the dalegate is itself.
         if let vc = segue.destination as? EditAccountViewController{
             vc.delegate = self
         }

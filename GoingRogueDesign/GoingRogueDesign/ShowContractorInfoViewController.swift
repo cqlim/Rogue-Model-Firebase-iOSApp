@@ -70,6 +70,7 @@ class ShowContractorInfoViewController: UIViewController, UITextFieldDelegate {
         }
     }
     
+    
     func buildAddContractorPage(){
         contractorFirstNameTextField.isUserInteractionEnabled = true
         contractorLastNameTextField.isUserInteractionEnabled = true
@@ -137,6 +138,7 @@ class ShowContractorInfoViewController: UIViewController, UITextFieldDelegate {
         errorLabel.alpha = 1
     }
     
+    // Allow user to dismiss the keyboard
     func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         self.view.endEditing(true)
         return false

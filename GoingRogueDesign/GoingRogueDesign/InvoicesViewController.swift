@@ -53,6 +53,7 @@ class InvoicesViewController: UIViewController {
         
         print("ProjectID： \(projectID)")
         
+        // Fetch the invoice data based on current project ID
         db.collection("Invoice").whereField("projectID", isEqualTo: projectID)
             .getDocuments() { (querySnapshot, err) in
                 if err != nil {
