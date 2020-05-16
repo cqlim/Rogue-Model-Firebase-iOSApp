@@ -155,22 +155,5 @@ extension InvoicesViewController: UITableViewDataSource, UITableViewDelegate{
         tableView.deselectRow(at: indexPath, animated: true)
         
     }
-    
-    func tableView(_ tableView: UITableView, canEditRowAt indexPath: IndexPath) -> Bool {
-        return true
-    }
-
-    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-        if (editingStyle == .delete) {
-            let db = Firestore.firestore()
-            let invoice = invoices[indexPath.row]
-            // handle delete (by removing the data from your array and updating the tableview)
-            tableview.beginUpdates()
-            invoices.remove(at: indexPath.row)
-            tableview.deleteRows(at: [indexPath], with: .fade)
-            db.collection("Invoice").document(invoice.invoiceID).delete()
-            tableview.endUpdates()
-        }
-    }
-    
+        
 }
