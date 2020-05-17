@@ -100,12 +100,31 @@ class InvoicesViewController: UIViewController {
         let currentTime = Date()
         
         if(sender.isSelected){
-            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"paid","invoicePaidDate":currentTime], merge: true)
+        db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"paid","invoicePaidDate":currentTime], merge: true)
+            
+            // updates a single cell
+            invoice.paid = "paid"
+            invoice.paidDate = dateToStringConverter(date: currentTime, time: true)
+            updateSingleCell(invoice: invoice, indexPath: indexPath!)
         }
         else{
 
-            db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"unpaid","invoicePaidDate":""], merge: true)
+        db.collection("Invoice").document(invoice.invoiceID).setData(["invoiceType":"unpaid","invoicePaidDate":""], merge: true)
+            
+            // updates a single cell
+            invoice.paid = "unpaid"
+            invoice.paidDate = ""
+            updateSingleCell(invoice: invoice, indexPath: indexPath!)
+
         }
+    }
+    
+    // This function updates a single cell when a user clicks a check box
+    func updateSingleCell(invoice: Invoice, indexPath: IndexPath){
+        let newCell = tableview.cellForRow(at: indexPath) as? InvoicesCell
+        newCell?.paidButtonStatus(invoice: invoice)
+        let dueDate = newCell?.checkOverdue(invoice: invoice)
+        newCell?.setInvoice(invoice: invoice,dueDate: dueDate!)
     }
     
 }

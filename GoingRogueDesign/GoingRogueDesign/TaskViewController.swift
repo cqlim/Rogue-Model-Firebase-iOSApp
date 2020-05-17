@@ -107,13 +107,36 @@ class TaskViewController: UIViewController, UITableViewDataSource {
         // Sends the state of the task to the Firebase database
         if(sender.isSelected){
             db.collection("Task").document(task.taskID).setData(["taskType":"completed", "taskResolvedDate":currentTime], merge: true)
+            
+            
+            // This updates a single cell upon clicking
+            task.taskStatus = "completed"
+            task.taskResolvedDate = dateToStringConverter(date: currentTime, time: true)
+            updateSingleCell(task: task, indexPath: indexPath!)
         }
         else{
-
-            db.collection("Task").document(task.taskID).setData(["taskType":"ongoing","taskResolvedDate":""], merge: true)
+        db.collection("Task").document(task.taskID).setData(["taskType":"ongoing","taskResolvedDate":""], merge: true)
+            
+            
+            // This updates a single cell upon clicking
+            task.taskStatus = "ongoing"
+            task.taskResolvedDate = "N/A"
+            updateSingleCell(task: task, indexPath: indexPath!)
+            
         }
 
     }
+    
+    
+    // This function updates a single cell when a user clicks a check box
+    func updateSingleCell(task: Task, indexPath: IndexPath){
+        let newCell = taskTableView.cellForRow(at: indexPath) as? TaskViewCell
+        newCell?.resolvedButtonStatus(task: task)
+        let dueDate = newCell?.checkOverdue(task: task)
+        newCell?.setTask(task: task,dueDate: dueDate!)
+    }
+    
+    
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
            return tasks.count
